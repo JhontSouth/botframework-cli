@@ -65,4 +65,9 @@ jobs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)/drop'
         ArtifactName: drop
 
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)/drop'
+        artifact: 'pack'
+        publishLocation: 'pipeline'
 
