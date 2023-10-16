@@ -23,12 +23,6 @@ steps:
   workingDirectory: $(Build.SourcesDirectory)
   displayName: Define Build Version
 
-- task: colinsalmcorner.colinsalmcorner-buildtasks.tag-build-task.tagBuildOrRelease@0
-  displayName: 'Tag Build with version number'
-  inputs:
-    tags: 'Version=$(buildVersion)'
-  continueOnError: true
-
 - task: NodeTool@0
   displayName: 'Use Node 18.x'
   inputs:
@@ -65,12 +59,6 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)/drop'
     flattenFolders: true
     
-- task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
-  displayName: 'generate software bill of materials'
-  inputs:
-    BuildDropPath: '$(Build.ArtifactStagingDirectory)/drop'
-    PackageName: 'Microsoft Bot Framework CLI'
-    PackageVersion: $(buildVersion)
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
