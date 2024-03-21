@@ -36,7 +36,7 @@ export async function processInputs(flags: any, payload: any, configfile: string
     config.endpoint = flags.endpoint
     result.config = config
     result.serviceManifest = serviceManifest
-  } catch (e) {
+  } catch (e : any) {
     throw new CLIError(e.message)
   }
 

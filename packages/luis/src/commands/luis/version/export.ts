@@ -57,7 +57,7 @@ export default class LuisVersionExport extends Command {
       } else {
         this.log(flags.exportLU ? messageData : JSON.stringify(messageData, null, 2))
       }
-    } catch (error) {
+    } catch (error : any) {
       throw new CLIError(error)
     }
   }

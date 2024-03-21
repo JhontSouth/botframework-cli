@@ -44,7 +44,7 @@ export class OrchestratorBaseModel {
       onProgress('Downloading model...');
       const modelUrl: string = 'https://aka.ms/' + basemodelId;
       await OrchestratorBaseModel.getModelAsync(baseModelPath, modelUrl, onProgress, onFinish);
-    } catch (error) {
+    } catch (error : any) {
       throw error;
     }
   }
@@ -87,10 +87,10 @@ export class OrchestratorBaseModel {
             });
         });
         Utility.debuggingLog('OrchestratorBaseModel.getModelAsync(): leaving');
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingThrow(`FAILED to unzip ${modelZipPath}, modelUrl=${modelUrl}, baseModelPath=${baseModelPath}, error=${error}`);
       }
-    } catch (error) {
+    } catch (error : any) {
       throw error;
     }
   }

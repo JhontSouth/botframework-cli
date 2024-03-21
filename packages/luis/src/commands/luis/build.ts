@@ -184,7 +184,7 @@ export default class LuisBuild extends Command {
         this.log('The published application setting:')
         this.log(JSON.stringify(JSON.parse(settingsContent[0].content).luis, null, 4))
       }
-    } catch (error) {
+    } catch (error : any) {
       if (error instanceof exception) {
         throw new CLIError(error.text)
       }

@@ -38,7 +38,7 @@ export default class LuisApplicationShow extends Command {
       if (appData) {
         await utils.writeToConsole(appData)
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to retrieve application data: ${err}`)
     }
   }

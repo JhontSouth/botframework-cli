@@ -47,7 +47,7 @@ export default class QnamakerCrossTrain extends Command {
 
       await this.writeFiles(trainedResult.luResult, flags.out, flags.force, fileExtEnum.LUFile)
       await this.writeFiles(trainedResult.qnaResult, flags.out, flags.force, fileExtEnum.QnAFile)
-    } catch (err) {
+    } catch (err : any) {
       if (err instanceof exception) {
         throw new CLIError(err.text)
       }
@@ -81,7 +81,7 @@ export default class QnamakerCrossTrain extends Command {
           }
 
           await fs.writeFile(validatedPath, fileIdToLuResourceMap.get(fileId).Content, 'utf-8')
-        } catch (err) {
+        } catch (err : any) {
           throw new CLIError(`Unable to write to file ${fileId}. Error: ${err.message}`)
         }
       }

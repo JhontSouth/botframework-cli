@@ -53,7 +53,7 @@ export class Helper {
           if (dirContentState.isFile() && path.extname(dirContent) === lgExt) {
             results.push(dirContent)
           }
-        } catch (error) {
+        } catch (error : any) {
           // do nothing, just continue the iterator
         }
       }

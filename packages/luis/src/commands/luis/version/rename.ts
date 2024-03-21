@@ -45,7 +45,7 @@ export default class LuisVersionRename extends Command {
       await Version.rename({subscriptionKey, endpoint, appId}, versionId, newVersionId)
       const output = flags.json ? JSON.stringify({Status: 'Success'}, null, 2) : 'App version successfully renamed'
       this.log(output)
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to rename app version: ${err}`)
     }
   }

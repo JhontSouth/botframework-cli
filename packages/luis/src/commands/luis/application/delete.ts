@@ -53,7 +53,7 @@ export default class LuisApplicationDelete extends Command {
         const output = flags.json ? JSON.stringify({Status: 'Success', id: flags.appId}, null, 2) : 'App successfully deleted.'
         this.log(output)
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to delete app: ${err}`)
     }
   }

@@ -16,7 +16,7 @@ export async function readTextFile(file: any): Promise<string> {
       }
       let fileBuffer = await fs.readFile(file)
       return resolve(helpers.fixBuffer(fileBuffer))
-    } catch (err) {
+    } catch (err : any) {
       if (err.message.match(/ENOENT: no such file or directory/)) {
         return reject(new error(retCode.errorCode.INVALID_INPUT_FILE, err.message))
       }

@@ -43,7 +43,7 @@ export default class LuisEndpointsList extends Command {
       } else {
         await utils.writeToConsole(endpointsList)
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to export endpoints list: ${err}`)
     }
   }

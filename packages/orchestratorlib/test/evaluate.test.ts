@@ -53,57 +53,57 @@ describe('Test Suite - the "evaluate" command', () => {
     if (toCleanUpAfterUnitTest) {
       try {
         Utility.deleteFile(snapshotSetIntentScoresOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output score file="${snapshotSetIntentScoresOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(snapshotSetIntentGroundTruthJsonContentOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output ground-truth json file="${snapshotSetIntentGroundTruthJsonContentOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(snapshotSetIntentPredictionJsonContentOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output prediction json file="${snapshotSetIntentPredictionJsonContentOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(snapshotSetIntentSummaryHtmlOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output summary file="${snapshotSetIntentSummaryHtmlOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(snapshotSetIntentLabelsOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output labels file="${snapshotSetIntentLabelsOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(snapshotSetEntityScoresOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output score file="${snapshotSetEntityScoresOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(snapshotSetEntityGroundTruthJsonContentOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output ground-truth json file="${snapshotSetEntityGroundTruthJsonContentOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(snapshotSetEntityPredictionJsonContentOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output prediction json file="${snapshotSetEntityPredictionJsonContentOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(snapshotSetEntitySummaryHtmlOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output summary file="${snapshotSetEntitySummaryHtmlOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(snapshotSetEntityLabelsOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output labels file="${snapshotSetEntityLabelsOutputFilename}", error=${error}`);
       }
       try {
         fs.rmdirSync(outputPath);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorEvaluate.runAsync(), FAILED deleting output folder=${outputPath}, error=${error}`);
       }
     }

@@ -72,7 +72,7 @@ export class Builder {
         result = await LuisBuilderVerbose.build(luFiles, log, fileCulture, importResolver)
         luisObj = new Luis(result)
         fileContent = luisObj.parseToLuContent()
-      } catch (err) {
+      } catch (err : any) {
         if (err.source) {
           err.text = `Invalid LU file ${err.source}: ${err.text}`
         } else {
@@ -287,7 +287,7 @@ export class Builder {
         // write dialog assets
         settingsAssets.push(settings)
       }
-    } catch (error) {
+    } catch (error : any) {
       throw(new exception(retCode.errorCode.LUIS_BUILD_FAILED, `Luis build failed: ${error.message ?? error.text}`))
     }
 

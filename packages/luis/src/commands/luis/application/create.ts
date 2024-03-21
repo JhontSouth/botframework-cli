@@ -70,7 +70,7 @@ export default class LuisApplicationCreate extends Command {
         const saveConfigResponse = await this.saveImportedConfig(config, configDir)
         if (saveConfigResponse && !flags.json) this.log('Config settings saved')
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to create app: ${err}`)
     }
   }

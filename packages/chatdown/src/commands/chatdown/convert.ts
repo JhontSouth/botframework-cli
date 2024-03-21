@@ -70,7 +70,7 @@ export default class ChatdownConvert extends Command {
         }
       }
 
-    } catch (err) {
+    } catch (err:any) {
       if (err.message.match(/Malformed configurations options detected/)) {
         throw new CLIError(err.message)
       }
@@ -134,7 +134,7 @@ export default class ChatdownConvert extends Command {
           const fileName = this.getFileName(files[i])
           let activities = await chatdown(await utils.readTextFile(files[i]))
           await this.writeOut(activities, fileName, outputDir, force)
-        } catch (e) {
+        } catch (e:any) {
           if (e.message.match(/no such file or directory/)) {
             reject(new CLIError(e.message))
           } else if (e.message.match(/Invalid Input/)) {
@@ -156,7 +156,7 @@ export default class ChatdownConvert extends Command {
       return validatedPath
     }
     const output = JSON.stringify(activities, null, 2)
-    await new Promise(done => process.stdout.write(output, 'utf-8', () => done()))
+    await new Promise<void>(done => process.stdout.write(output, 'utf-8', () => done()))
     return true
   }
 }

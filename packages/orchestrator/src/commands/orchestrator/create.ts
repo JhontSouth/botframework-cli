@@ -80,7 +80,7 @@ export default class OrchestratorCreate extends Command {
 
       settings.SnapshotPath = snapshotFilePath;
       settings.persist();
-    } catch (error) {
+    } catch (error : any) {
       throw (new CLIError(error as Error));
     }
   }

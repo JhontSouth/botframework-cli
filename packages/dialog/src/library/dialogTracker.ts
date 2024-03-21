@@ -231,7 +231,7 @@ export class DialogTracker {
 
             // Assume we will save it and reset this when coming from file
             dialog.save = true
-        } catch (e) {
+        } catch (e : any) {
             dialog.errors.push(e)
         }
         this.dialogs.push(dialog)
@@ -245,7 +245,7 @@ export class DialogTracker {
             const definition = await parser.dereference(await fs.readJSON(rel))
             dialog = new Dialog(rel, definition)
             await this.addDialog(dialog)
-        } catch (e) {
+        } catch (e : any) {
             // File is not valid JSON
             dialog = new Dialog(rel)
             dialog.errors.push(e)

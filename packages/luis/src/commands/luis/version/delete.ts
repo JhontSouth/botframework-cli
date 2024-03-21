@@ -45,7 +45,7 @@ export default class LuisVersionDelete extends Command {
         const output = flags.json ? JSON.stringify({Status: 'Success', version: versionId}, null, 2) : `Successfully deleted version ${versionId}`
         this.log(output)
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to delete app version: ${err}`)
     }
   }

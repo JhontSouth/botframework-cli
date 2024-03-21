@@ -79,7 +79,7 @@ export class SchemaTracker {
                 if (!validator) {
                     throw new Error(`Could not get validator for schema ${schemaPath}`)
                 }
-            } catch (err) {
+            } catch (err : any) {
                 throw new Error(`Could not use schema ${schemaPath}\n${err.message}`)
             }
         }

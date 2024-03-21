@@ -501,7 +501,7 @@ export class SchemaMerger {
             await this.mergeUISchemas(schema)
             this.log('')
             imports = await this.copyAssets()
-        } catch (e) {
+        } catch (e : any) {
             this.mergingError((e as string | Error))
         }
         if (this.failed) {
@@ -628,7 +628,7 @@ export class SchemaMerger {
                     }
                     this.definitions[kind] = component
                 }
-            } catch (e) {
+            } catch (e : any) {
                 this.parsingError((e as string | Error))
             }
         }
@@ -751,7 +751,7 @@ export class SchemaMerger {
                             }
                             delete component.$schema
                             locale[kindName] = mergeObjects(locale[kindName], component)
-                        } catch (e) {
+                        } catch (e : any) {
                             this.parsingError((e as string | Error))
                         }
                     }
@@ -857,7 +857,7 @@ export class SchemaMerger {
                                     await fs.ensureDir(ppath.dirname(destination))
                                     await fs.writeFile(destination, info.definition)
                                 }
-                            } catch (e) {
+                            } catch (e : any) {
                                 if (msg) {
                                     this.log(msg)
                                 }
@@ -1177,7 +1177,7 @@ export class SchemaMerger {
                     // </group>
                     this.parsingWarning('Missing package')
                 }
-            } catch (e) {
+            } catch (e : any) {
                 this.parsingWarning((e as Error).message)
             } finally {
                 this.currentFile = this.currentParent().metadata.path
@@ -1498,7 +1498,7 @@ export class SchemaMerger {
             xml = xml.slice(1)
         }
         return new Promise((resolve, reject) =>
-            xp.parseString(xml, (err: Error, result: any) => {
+            xp.parseString(xml, (err: any, result: any) => {
                 if (err) {
                     reject(err)
                 } else {

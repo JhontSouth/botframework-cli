@@ -52,7 +52,7 @@ export default class LuisTrainRun extends Command {
 
         return this.checkTrainingStatus({subscriptionKey, endpoint, appId}, versionId, flags.json)
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to issue training request: ${err.message}`)
     }
   }
@@ -85,7 +85,7 @@ export default class LuisTrainRun extends Command {
         const output = jsonOutput ? JSON.stringify({Status: completionMssg}, null, 2) : `${completionMssg} Training is complete`
         this.log(output)
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(err)
     }
   }

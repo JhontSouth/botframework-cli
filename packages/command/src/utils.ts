@@ -40,7 +40,7 @@ async function readTextFile(file: any): Promise<string> {
         }
       }
       return resolve(fileBuffer.toString('utf8').replace(/\0/g, ''))
-    } catch (err) {
+    } catch (err : any) {
       if (err.message.match(/ENOENT: no such file or directory/)) {
         return reject(new CLIError(err.message))
       }

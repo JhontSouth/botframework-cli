@@ -55,7 +55,7 @@ export default class LuisGenerateCs extends Command {
       let app: any
       try {
         app = flags.in ? await fs.readJSON(path.join(pathPrefix, flags.in)) : JSON.parse(stdInput as string)
-      } catch (err) {
+      } catch (err : any) {
         throw new CLIError(err)
       }
 
@@ -86,7 +86,7 @@ export default class LuisGenerateCs extends Command {
         `Generating file at ${outputPath || 'stdout'} that contains class ${space}.${flags.className}.`
       )
       await LuisToCsConverter.writeFromLuisJson(app, flags.className, space, outputPath)
-    } catch (err) {
+    } catch (err : any) {
       if (err instanceof exception) {
         throw new CLIError(err.text)
       }

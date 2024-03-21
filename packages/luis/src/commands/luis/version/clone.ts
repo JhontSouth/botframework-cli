@@ -45,7 +45,7 @@ export default class LuisVersionClone extends Command {
 
       const output = flags.json ? JSON.stringify({Status: 'Success', version: messageData}, null, 2) : `App successfully cloned. Latest version is now: ${messageData}`
       this.log(output)
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to clone app: ${err}`)
     }
   }

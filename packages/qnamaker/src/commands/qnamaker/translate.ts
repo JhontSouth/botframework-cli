@@ -84,7 +84,7 @@ export default class QnamakerTranslate extends Command {
       } else {
         this.log(JSON.stringify(result, null, 2))
       }
-    } catch (error) {
+    } catch (error : any) {
       console.log(error)
       if (error instanceof exception) {
         throw new CLIError(error.text)
@@ -104,7 +104,7 @@ export default class QnamakerTranslate extends Command {
           await fs.writeFile(validatedPath, content, 'utf-8')
         }
       }
-    } catch (error) {
+    } catch (error : any) {
       throw new CLIError('Unable to write file - ' + filePath + ' Error: ' + error.message)
     }
   }

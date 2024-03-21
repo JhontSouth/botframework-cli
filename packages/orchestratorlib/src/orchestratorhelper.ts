@@ -51,7 +51,7 @@ export class OrchestratorHelper {
         return '';
       }
       return ReadText.readSync(filePath);
-    } catch (error) {
+    } catch (error : any) {
       UtilityDispatcher.debuggingLog2(
         'EXCEPTION calling ReadText.readSync()',
         filePath,
@@ -545,7 +545,7 @@ export class OrchestratorHelper {
             Utility.debuggingLog(`processed numberLinesIgnored=${numberLinesIgnored}`);
           }
         }
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`WARNING processing lineIndex=${lineIndex}, line='${line}', error=${error}`);
         numberLinesIgnored++;
         if ((numberLinesIgnored % Utility.NumberOfInstancesPerProgressDisplayBatch) === 0) {
@@ -689,7 +689,7 @@ export class OrchestratorHelper {
         });
         return true;
       }
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling getIntentsEntitiesUtterances(), error=${error}`);
       throw error;
     }
@@ -772,7 +772,7 @@ export class OrchestratorHelper {
         });
         return true;
       }
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling getJsonIntentsEntitiesUtterances(), error=${error}`);
       throw error;
     }
@@ -817,7 +817,7 @@ export class OrchestratorHelper {
         });
         return true;
       }
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling getJsonIntentsEntitiesUtterances(), error=${error}`);
       throw error;
     }
@@ -872,7 +872,7 @@ export class OrchestratorHelper {
         });
         return true;
       }
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling getExampleArrayIntentsEntitiesUtterances(), error=${error}`);
       throw error;
     }
@@ -910,7 +910,7 @@ export class OrchestratorHelper {
         });
         return true;
       }
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling getJsonIntentEntityScoresUtterances(), error=${error}`);
       throw error;
     }
@@ -955,7 +955,7 @@ export class OrchestratorHelper {
         existingLabels.add(label);
         utteranceLabelsMap.set(utterance, existingLabels);
       }
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addNewLabelUtterance(), error='${error}', label='${label}', utterance='${utterance}', hierarchicalLabel='${hierarchicalLabel}', isHierarchicalLabel='${isHierarchicalLabel}', existingLabels='${existingLabels}'`);
       throw error;
     }
@@ -1024,7 +1024,7 @@ export class OrchestratorHelper {
             entityName);
         });
       }
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addNewEntityLabelUtteranceTraversal(), error='${error}', entityEntry='${entityEntry}', utterance='${utterance}', existingEntityLabels='${existingEntityLabels}'`);
       throw error;
     }
@@ -1050,7 +1050,7 @@ export class OrchestratorHelper {
         utteranceEntityLabelsMap,
         utteranceEntityLabelDuplicateMap,
         '');
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addNewEntityLabelUtterance(), error='${error}', entityEntry='${entityEntry}', utterance='${utterance}', existingEntityLabels='${existingEntityLabels}'`);
       throw error;
     }
@@ -1083,7 +1083,7 @@ export class OrchestratorHelper {
       } else if (!OrchestratorHelper.addUniqueEntityLabelArray(entityEntry, existingEntityLabels)) {
         Utility.insertStringLabelPairToStringIdLabelSetNativeMap(utterance, entityEntry, utteranceEntityLabelDuplicateMap);
       }
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addNewEntityLabelUtterance(), error='${error}', entityEntry='${entityEntry}', utterance='${utterance}', existingEntityLabels='${existingEntityLabels}'`);
       throw error;
     }
@@ -1100,7 +1100,7 @@ export class OrchestratorHelper {
       }
       labels.add(newLabel);
       return true;
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addUniqueLabel(), error='${error}', newLabel='${newLabel}', labels='${labels}'`);
       throw error;
     }
@@ -1117,7 +1117,7 @@ export class OrchestratorHelper {
       }
       labels.push(newLabel);
       return true;
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addUniqueLabelToArray(), error='${error}', newLabel='${newLabel}', labels='${labels}'`);
       throw error;
     }
@@ -1134,7 +1134,7 @@ export class OrchestratorHelper {
       }
       labels.push(newLabel);
       return true;
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addUniqueEntityLabelArray(), error='${error}', newLabel='${newLabel}', labels='${labels}'`);
       throw error;
     }

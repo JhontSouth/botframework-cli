@@ -55,7 +55,7 @@ export default class QnamakerKbExport extends Command {
 
     try {
       await fs.writeFile(validatedPath, result, 'utf-8')
-    } catch (error) {
+    } catch (error : any) {
       throw new CLIError('Unable to write file - ' + validatedPath + ' Error: ' + error.message)
     }
   }

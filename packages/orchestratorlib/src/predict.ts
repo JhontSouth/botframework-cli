@@ -468,7 +468,7 @@ export class OrchestratorPredict {
      */
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetLoop`, {callee: 'commandLetLoop'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const interactive: readline.Interface = readline.createInterface(process.stdin, process.stdout);
     const question: any = function (prefix: string) {
@@ -570,7 +570,7 @@ export class OrchestratorPredict {
   public commandLetH(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetH`, {commandLet: 'commandLetH'});
-    } catch (error) {
+    } catch (error : any) {
     }
     console.log('  Commandlets: h, q, d, s, u, cu, i, ci, ni, cni, q, p, v,');
     console.log('               vd, va, vm, vl, vat, vlt, vmt, vut, vo, a, r, c, rl, n');
@@ -628,7 +628,7 @@ export class OrchestratorPredict {
   public commandLetD(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetD`, {commandLet: 'commandLetD'});
-    } catch (error) {
+    } catch (error : any) {
     }
     console.log(`> Ambiguous closeness:           ${this.ambiguousClosenessThreshold}`);
     console.log(`> Low-confidence threshold:      ${this.lowConfidenceScoreThreshold}`);
@@ -647,7 +647,7 @@ export class OrchestratorPredict {
   public commandLetS(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetS`, {commandLet: 'commandLetS'});
-    } catch (error) {
+    } catch (error : any) {
     }
     this.currentUtteranceLabelsMap = new Map<string, Set<string>>();
     this.currentUtteranceLabelDuplicateMap = new Map<string, Set<string>>();
@@ -697,7 +697,7 @@ export class OrchestratorPredict {
   public async commandLetU(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetU`, {commandLet: 'commandLetU'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetUwithEntry(await question(OrchestratorPredict.questionForUtterance));
   }
@@ -705,7 +705,7 @@ export class OrchestratorPredict {
   public commandLetUwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetUwithEntry`, {commandLet: 'commandLetUwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     this.currentUtterance = entry;
     return 0;
@@ -714,7 +714,7 @@ export class OrchestratorPredict {
   public commandLetCU(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetCU`, {commandLet: 'commandLetCU'});
-    } catch (error) {
+    } catch (error : any) {
     }
     this.currentUtterance = '';
     return 0;
@@ -723,7 +723,7 @@ export class OrchestratorPredict {
   public async commandLetI(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetI`, {commandLet: 'commandLetI'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetIwithEntry(await question(OrchestratorPredict.questionForCurrentIntentLabel));
   }
@@ -731,7 +731,7 @@ export class OrchestratorPredict {
   public commandLetIwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetIwithEntry`, {commandLet: 'commandLetIwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     let label: string = entry;
     label = label.trim();
@@ -749,7 +749,7 @@ export class OrchestratorPredict {
   public commandLetCI(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetCI`, {commandLet: 'commandLetCI'});
-    } catch (error) {
+    } catch (error : any) {
     }
     this.currentIntentLabels = [];
     return 0;
@@ -758,7 +758,7 @@ export class OrchestratorPredict {
   public async commandLetNI(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetNI`, {commandLet: 'commandLetNI'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetNIwithEntry(await question(OrchestratorPredict.questionForNewIntentLabel));
   }
@@ -766,7 +766,7 @@ export class OrchestratorPredict {
   public commandLetNIwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetNIwithEntry`, {commandLet: 'commandLetNIwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     let label: string = entry;
     label = label.trim();
@@ -784,7 +784,7 @@ export class OrchestratorPredict {
   public commandLetCNI(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetCNI`, {commandLet: 'commandLetCNI'});
-    } catch (error) {
+    } catch (error : any) {
     }
     this.newIntentLabels = [];
     return 0;
@@ -793,7 +793,7 @@ export class OrchestratorPredict {
   public commandLetF(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetF`, {commandLet: 'commandLetF'});
-    } catch (error) {
+    } catch (error : any) {
     }
     if (this.currentUtteranceLabelsMap.size <= 0) {
       console.log('ERROR: Please run \'s\' commandlet first scanning the model snapshot for querying');
@@ -814,7 +814,7 @@ export class OrchestratorPredict {
   public commandLetP(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetP`, {commandLet: 'commandLetP'});
-    } catch (error) {
+    } catch (error : any) {
     }
     if (Utility.isEmptyString(this.baseModelPath)) {
       console.log('> No model is loaded, cannot make a prediction.');
@@ -831,7 +831,7 @@ export class OrchestratorPredict {
   public commandLetV(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetV`, {commandLet: 'commandLetV'});
-    } catch (error) {
+    } catch (error : any) {
     }
     // -----------------------------------------------------------------------
     // ---- NOTE ---- retrieve the examples.
@@ -979,7 +979,7 @@ export class OrchestratorPredict {
   public async commandLetVD(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVD`, {commandLet: 'commandLetVD'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetVDwithEntry(await question(OrchestratorPredict.questionForUtteranceLabelsFromDuplicates));
   }
@@ -987,7 +987,7 @@ export class OrchestratorPredict {
   public commandLetVDwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVDwithEntry`, {commandLet: 'commandLetVDwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     if (!this.currentIntentEvaluationOutput) {
       console.log('ERROR: There is no validation report, please use the "v" command to create one');
@@ -1028,7 +1028,7 @@ export class OrchestratorPredict {
   public async commandLetVA(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVA`, {commandLet: 'commandLetVA'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetVAwithEntry(await question(OrchestratorPredict.questionForUtteranceLabelsFromAmbiguous));
   }
@@ -1036,7 +1036,7 @@ export class OrchestratorPredict {
   public commandLetVAwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVAwithEntry`, {commandLet: 'commandLetVAwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     if (!this.currentIntentEvaluationOutput) {
       console.log('ERROR: There is no validation report, please use the "v" command to create one');
@@ -1077,7 +1077,7 @@ export class OrchestratorPredict {
   public async commandLetVM(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVM`, {commandLet: 'commandLetVM'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetVMwithEntry(await question(OrchestratorPredict.questionForUtteranceLabelsFromMisclassified));
   }
@@ -1085,7 +1085,7 @@ export class OrchestratorPredict {
   public commandLetVMwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVMwithEntry`, {commandLet: 'commandLetVMwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     if (!this.currentIntentEvaluationOutput) {
       console.log('ERROR: There is no validation report, please use the "v" command to create one');
@@ -1126,7 +1126,7 @@ export class OrchestratorPredict {
   public async commandLetVL(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVL`, {commandLet: 'commandLetVL'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetVLwithEntry(await question(OrchestratorPredict.questionForUtteranceLabelsFromLowConfidence));
   }
@@ -1134,7 +1134,7 @@ export class OrchestratorPredict {
   public commandLetVLwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVLwithEntry`, {commandLet: 'commandLetVLwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     if (!this.currentIntentEvaluationOutput) {
       console.log('ERROR: There is no validation report, please use the "v" command to create one');
@@ -1175,7 +1175,7 @@ export class OrchestratorPredict {
   public async commandLetVAT(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVAT`, {commandLet: 'commandLetVAT'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetVATwithEntry(await question(OrchestratorPredict.questionForAmbiguousThreshold));
   }
@@ -1183,7 +1183,7 @@ export class OrchestratorPredict {
   public commandLetVATwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVATwithEntry`, {commandLet: 'commandLetVATwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const ambiguousClosenessThresholdParameter: string = entry;
     const ambiguousClosenessThreshold: number = Number(ambiguousClosenessThresholdParameter);
@@ -1198,7 +1198,7 @@ export class OrchestratorPredict {
   public async commandLetVLT(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVLT`, {commandLet: 'commandLetVLT'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetVLTwithEntry(await question(OrchestratorPredict.questionForLowConfidenceThreshold));
   }
@@ -1206,7 +1206,7 @@ export class OrchestratorPredict {
   public commandLetVLTwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVLTwithEntry`, {commandLet: 'commandLetVLTwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const lowConfidenceScoreThresholdParameter: string = entry;
     const lowConfidenceScoreThreshold: number = Number(lowConfidenceScoreThresholdParameter);
@@ -1221,7 +1221,7 @@ export class OrchestratorPredict {
   public async commandLetVMT(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVMT`, {commandLet: 'commandLetVMT'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetVMTwithEntry(await question(OrchestratorPredict.questionForMultiLabelPredictionThreshold));
   }
@@ -1229,7 +1229,7 @@ export class OrchestratorPredict {
   public commandLetVMTwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVMTwithEntry`, {commandLet: 'commandLetVMTwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const multiLabelPredictionThresholdParameter: string = entry;
     const multiLabelPredictionThreshold: number = Number(multiLabelPredictionThresholdParameter);
@@ -1244,7 +1244,7 @@ export class OrchestratorPredict {
   public async commandLetVUT(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVUT`, {commandLet: 'commandLetVUT'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetVUTwithEntry(await question(OrchestratorPredict.questionForUnknownLabelPredictionThreshold));
   }
@@ -1252,7 +1252,7 @@ export class OrchestratorPredict {
   public commandLetVUTwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVUTwithEntry`, {commandLet: 'commandLetVUTwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const unknownLabelPredictionThresholdParameter: string = entry;
     const unknownLabelPredictionThreshold: number = Number(unknownLabelPredictionThresholdParameter);
@@ -1267,7 +1267,7 @@ export class OrchestratorPredict {
   public async commandLetVO(question: any): Promise<number> {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVO`, {commandLet: 'commandLetVO'});
-    } catch (error) {
+    } catch (error : any) {
     }
     return this.commandLetVOwithEntry(await question(OrchestratorPredict.questionForObfuscateEvaluationReport));
   }
@@ -1275,7 +1275,7 @@ export class OrchestratorPredict {
   public commandLetVOwithEntry(entry: string): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetVOwithEntry`, {commandLet: 'commandLetVOwithEntry'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const obfuscateEvaluationReportParameter: string = entry;
     const obfuscateEvaluationReport: boolean = UtilityDispatcher.toBoolean(obfuscateEvaluationReportParameter);
@@ -1286,7 +1286,7 @@ export class OrchestratorPredict {
   public commandLetA(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetA`, {commandLet: 'commandLetA'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const example: Example = Example.newIntentExample(
       this.currentUtterance,
@@ -1306,7 +1306,7 @@ export class OrchestratorPredict {
   public commandLetR(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetR`, {commandLet: 'commandLetR'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const example: Example = Example.newIntentExample(
       this.currentUtterance,
@@ -1326,7 +1326,7 @@ export class OrchestratorPredict {
   public commandLetC(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetC`, {commandLet: 'commandLetC'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const exampleToRemove: Example = Example.newIntentExample(
       this.currentUtterance,
@@ -1357,7 +1357,7 @@ export class OrchestratorPredict {
   public commandLetRL(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetRL`, {commandLet: 'commandLetRL'});
-    } catch (error) {
+    } catch (error : any) {
     }
     if (Utility.isEmptyStringArray(this.currentIntentLabels)) {
       console.log('ERROR: "Current" intent label array is empty.');
@@ -1377,7 +1377,7 @@ export class OrchestratorPredict {
   public commandLetN(): number {
     try {
       this.trackEventFunction(`${this.cliCmmandId}:commandLetN`, {commandLet: 'commandLetN'});
-    } catch (error) {
+    } catch (error : any) {
     }
     const snapshot: any = LabelResolver.createSnapshot();
     Utility.dumpFile(this.getPredictingSetIntentSnapshotFilename(), snapshot);

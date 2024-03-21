@@ -74,7 +74,7 @@ const httpRequest = async function (subscriptionKey: string, config: any) {
   setSubscriptionKey(subscriptionKey)
   try {
     return await axios(config)
-  } catch (error) {
+  } catch (error : any) {
     if (error.response) {
       // The request was made and the server responded with a status code
       // that falls out of the range of 2xx
@@ -96,7 +96,7 @@ const setSubscriptionKey = function (subscriptionKey: string) {
 const isJSON = function (jsonObject: any) {
   try {
     JSON.parse(jsonObject + '')
-  } catch (error) {
+  } catch (error : any) {
     return false
   }
   return true

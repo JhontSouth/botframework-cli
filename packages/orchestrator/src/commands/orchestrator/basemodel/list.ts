@@ -35,7 +35,7 @@ export default class OrchestratorBaseModelList extends Command {
       } else {
         this.log(Utility.jsonStringify(baseModels, null, 2));
       }
-    } catch (error) {
+    } catch (error : any) {
       throw (new CLIError(error));
     }
   }

@@ -65,57 +65,57 @@ describe('Test Suite - test', () => {
     if (toCleanUpAfterUnitTest) {
       try {
         Utility.deleteFile(testingSetIntentScoresOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output score file="${testingSetIntentScoresOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(testingSetIntentGroundTruthJsonContentOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output ground-truth json file="${testingSetIntentGroundTruthJsonContentOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(testingSetIntentPredictionJsonContentOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output prediction json file="${testingSetIntentPredictionJsonContentOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(testingSetIntentSummaryHtmlOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output summary file="${testingSetIntentSummaryHtmlOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(testingSetIntentLabelsOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output labels file="${testingSetIntentLabelsOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(testingSetEntityScoresOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output score file="${testingSetEntityScoresOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(testingSetEntityGroundTruthJsonContentOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output ground-truth json file="${testingSetEntityGroundTruthJsonContentOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(testingSetEntityPredictionJsonContentOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output prediction json file="${testingSetEntityPredictionJsonContentOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(testingSetEntitySummaryHtmlOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output summary file="${testingSetEntitySummaryHtmlOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(testingSetEntityLabelsOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output labels file="${testingSetEntityLabelsOutputFilename}", error=${error}`);
       }
       try {
         fs.rmdirSync(outputPath);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0100 OrchestratorTest.runAsync()-Bert-3-layer: FAILED deleting output folder=${outputPath}, error=${error}`);
       }
     }

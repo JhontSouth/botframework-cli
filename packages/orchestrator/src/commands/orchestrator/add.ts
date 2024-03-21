@@ -83,7 +83,7 @@ export default class OrchestratorAdd extends Command {
       }
 
       settings.persist();
-    } catch (error) {
+    } catch (error : any) {
       throw (new CLIError(error));
     }
   }

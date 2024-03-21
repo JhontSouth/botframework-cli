@@ -66,7 +66,7 @@ const hook: Hook<'init'> = async function (opts) {
     }
 
   /* tslint:disable:no-unused */
-  } catch (err) {
+  } catch (err : any) {
       // swallow the exception; we don't want to crash the app
       // on a failed attempt to check version
   }
@@ -97,7 +97,7 @@ const hook: Hook<'init'> = async function (opts) {
     this.config.pjson.telemetry = userConfig.telemetry === null ? false : userConfig.telemetry
   /* tslint:disable:no-unused */
 
-  } catch (err) {
+  } catch (err : any) {
     this.config.pjson.telemetry = false
   }
 }

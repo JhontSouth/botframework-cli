@@ -26,7 +26,7 @@ export class OrchestratorFineTune {
 
       // eslint-disable-next-line no-console
       console.log('Fine tuning will be available soon.');
-    } catch (error) {
+    } catch (error : any) {
       throw new Error(error);
     }
   }

@@ -113,7 +113,7 @@ describe('command', () => {
     try {
       const resp: any = await ReadPipedStdin.read()
       if (resp) console.log(resp)
-    } catch (error) {
+    } catch (error : any) {
       if (error) console.log(`Error: ${error}`)
     }
   })
@@ -129,7 +129,7 @@ describe('command', () => {
           const simpleChatFile = path.join(__dirname, 'fixtures/cli.sample.txt')
           const resp: any = await utils.readTextFile(simpleChatFile)
           this.log(resp.toString())
-        } catch (error) {
+        } catch (error : any) {
           if (error) this.log(`Error: ${error}`)
         }
       }
@@ -148,7 +148,7 @@ describe('command', () => {
           const simpleChatFile = path.join(__dirname, 'fixtures/xxx.txt')
           const resp: any = await utils.readTextFile(simpleChatFile)
           this.log(resp.toString())
-        } catch (error) {
+        } catch (error : any) {
           if (error) this.log(`Error: ${error}`)
         }
       }

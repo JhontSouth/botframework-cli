@@ -229,7 +229,7 @@ export class OrchestratorSettings {
       if (!Utility.isEmptyString(entityBaseModelPath)) {
         this.EntityModelPath = entityBaseModelPath;
       }
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`Failed initializing settings ${error.message}`);
     }
   }
@@ -251,7 +251,7 @@ export class OrchestratorSettings {
       };
 
       OrchestratorSettings.writeToFile(this.SettingsPath, OrchestratorHelper.jsonStringify(settings));
-    } catch (error) {
+    } catch (error : any) {
       throw new Error(error);
     }
   }

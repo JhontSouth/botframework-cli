@@ -70,7 +70,7 @@ export default class OrchestratorBuild extends Command {
       const settingsFile: string = path.join(output, 'orchestrator.settings.json');
       OrchestratorHelper.writeToFile(settingsFile, JSON.stringify(retPayload.settings, null, 2));
       this.log(`orchestrator.settings.json is written to ${settingsFile}`);
-    } catch (error) {
+    } catch (error : any) {
       throw (new CLIError(error));
     }
   }

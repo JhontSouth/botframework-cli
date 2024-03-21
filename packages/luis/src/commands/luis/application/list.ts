@@ -45,7 +45,7 @@ export default class LuisApplicationList extends Command {
       } else {
         await utils.writeToConsole(appList)
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to export application list: ${err}`)
     }
   }

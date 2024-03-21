@@ -39,7 +39,7 @@ export default class LuisTrainShow extends Command {
       if (trainingStatus) {
         await utils.writeToConsole(trainingStatus)
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to retrieve training status: ${err}`)
     }
   }

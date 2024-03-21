@@ -48,7 +48,7 @@ export abstract class Command extends Base {
         this.trackEvent(this.id + '', {flags : this.getTelemetryProperties(), error: this.extractError(err)})
         this.error('Unknown error during execution. Please file an issue on https://github.com/microsoft/botframework-cli/issues')
         this.error(err.message)
-      } catch (e) {}
+      } catch (e : any) {}
     }
 
     // return exit code
@@ -68,7 +68,7 @@ export abstract class Command extends Base {
   async readStdin(): Promise<string> {
     try {
       return await ReadPipedData.read()
-    } catch (error) {
+    } catch (error : any) {
       return ''
     }
   }

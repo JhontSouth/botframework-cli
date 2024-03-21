@@ -65,7 +65,7 @@ export async function getContentFromFile(file: string) {
   let fileContent
   try {
     fileContent = await readTextFile(file)
-  } catch (err) {
+  } catch (err : any) {
     throw (new exception(retCode.errorCode.INVALID_INPUT_FILE, 'Sorry, error reading file: ' + file))
   }
   return fileContent
@@ -165,7 +165,7 @@ export async function detectLuContent(stdin: string, input: string) {
 
   try {
     await JSON.parse(stdin)
-  } catch (error) {
+  } catch (error : any) {
     return true
   }
   return false
@@ -276,7 +276,7 @@ export function getConfigObject(configObject: any, intentName: string, verbose: 
           }
         }
       }
-    } catch (err) {
+    } catch (err : any) {
       throw (new exception(retCode.errorCode.INVALID_INPUT_FILE, `Sorry, invalid cross training config: ${err}`))
     }
   }
@@ -295,7 +295,7 @@ export function getConfigObject(configObject: any, intentName: string, verbose: 
 export function parseJSON(input: string, appType: string) {
   try {
     return JSON.parse(input)
-  } catch (error) {
+  } catch (error : any) {
     throw (new exception(retCode.errorCode.INVALID_INPUT_FILE, `Sorry, error parsing content as ${appType} JSON`))
   }
 }

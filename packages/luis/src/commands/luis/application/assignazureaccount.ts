@@ -55,7 +55,7 @@ export default class LuisApplicationAssignazureaccount extends Command {
       const output: string = flags.json ? JSON.stringify({Status: 'Success'}, null, 2) : 'Account successfully assigned.'
       this.log(output)
 
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to assign account: ${err}`)
     }
   }

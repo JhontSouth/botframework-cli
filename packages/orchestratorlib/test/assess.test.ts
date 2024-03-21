@@ -36,27 +36,27 @@ describe('Test Suite - the "assess" command', () => {
     if (toCleanUpAfterUnitTest) {
       try {
         Utility.deleteFile(assessmentSetIntentSummaryHtmlOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorAssess.runAsync(), FAILED deleting output intent-summary file="${assessmentSetIntentSummaryHtmlOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(assessmentSetIntentLabelsOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorAssess.runAsync(), FAILED deleting output intent-labels file="${assessmentSetIntentLabelsOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(assessmentSetEntitySummaryHtmlOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorAssess.runAsync(), FAILED deleting output entity-summary file="${assessmentSetEntitySummaryHtmlOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(assessmentSetEntityLabelsOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorAssess.runAsync(), FAILED deleting output entity-labels file="${assessmentSetEntityLabelsOutputFilename}", error=${error}`);
       }
       try {
         fs.rmdirSync(outputPath);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0000 OrchestratorAssess.runAsync(), FAILED deleting output folder, error=${error}`);
       }
     }
@@ -83,27 +83,27 @@ describe('Test Suite - the "assess" command', () => {
     if (toCleanUpAfterUnitTest) {
       try {
         Utility.deleteFile(assessmentSetIntentSummaryHtmlOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0001 OrchestratorAssess.runAsync(), FAILED deleting output intent-summary file="${assessmentSetIntentSummaryHtmlOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(assessmentSetIntentLabelsOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0001 OrchestratorAssess.runAsync(), FAILED deleting output intent-labels file="${assessmentSetIntentLabelsOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(assessmentSetEntitySummaryHtmlOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0001 OrchestratorAssess.runAsync(), FAILED deleting output entity-summary file="${assessmentSetEntitySummaryHtmlOutputFilename}", error=${error}`);
       }
       try {
         Utility.deleteFile(assessmentSetEntityLabelsOutputFilename);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0001 OrchestratorAssess.runAsync(), FAILED deleting output entity-labels file="${assessmentSetEntityLabelsOutputFilename}", error=${error}`);
       }
       try {
         fs.rmdirSync(outputPath);
-      } catch (error) {
+      } catch (error : any) {
         Utility.debuggingLog(`Test.0001 OrchestratorAssess.runAsync(), FAILED deleting output folder, error=${error}`);
       }
     }

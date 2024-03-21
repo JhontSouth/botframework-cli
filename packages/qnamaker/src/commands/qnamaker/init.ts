@@ -57,7 +57,7 @@ export default class QnamakerInit extends Command {
     try {
       confirmation = await cli.confirm(`Does this look ok?\n${JSON.stringify(config, null, 2)}\n[Yes]/No:`)
       /* tslint:disable: no-unused */
-    } catch (e) {
+    } catch (e : any) {
       return false
     }
 
@@ -75,7 +75,7 @@ export default class QnamakerInit extends Command {
       response = await new Knowledgebase().getKnowledgebaseDetails(config)
       let kb = response.data
       config.hostname = kb.hostName
-    } catch (error) {
+    } catch (error : any) {
       this.error(`Update of KB endpoint key and hostname failed: ${error}`)
     }
   }

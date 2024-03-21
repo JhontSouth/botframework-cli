@@ -183,7 +183,7 @@ export default class QnamakerBuild extends Command {
         this.log('QnA knowledge base endpointKeys:')
         this.log(endpointKeys)
       }
-    } catch (error) {
+    } catch (error : any) {
       if (error instanceof exception) {
         throw new CLIError(error.text)
       }

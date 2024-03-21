@@ -22,7 +22,7 @@ const getInputFromFile = async (path: string): Promise<string> => {
   if (path) {
     try {
       return await utils.readTextFile(path)
-    } catch (error) {
+    } catch (error : any) {
       throw new CLIError(`Failed to read app JSON: ${error}`)
     }
   }
@@ -113,7 +113,7 @@ const writeToFile = async (outputLocation: string, content: any, force: boolean,
     } else {
       await fs.writeJson(validatedPath, content, {spaces: 2})
     }
-  } catch (error) {
+  } catch (error : any) {
     throw new CLIError(error)
   }
   return validatedPath

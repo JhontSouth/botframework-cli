@@ -116,7 +116,7 @@ export default class OrchestratorInteractive extends Command {
         unknownLabelPredictionThresholdParameter,
         fullEmbeddings,
         obfuscate);
-    } catch (error) {
+    } catch (error : any) {
       throw (new CLIError(error));
     }
   }

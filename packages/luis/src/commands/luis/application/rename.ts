@@ -50,7 +50,7 @@ export default class LuisApplicationRename extends Command {
         this.log(output)
       }
 
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to rename app: ${err}`)
     }
   }

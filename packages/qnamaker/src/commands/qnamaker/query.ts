@@ -49,7 +49,7 @@ export default class QnamakerQuery extends Command {
       try {
         let sf = await getFileInput(flags.strictfilters)
         input.requestBody.strictFilters = sf.strictfilters
-      } catch (error) {
+      } catch (error : any) {
         throw new CLIError(error.message)
       }
     }
@@ -58,7 +58,7 @@ export default class QnamakerQuery extends Command {
       try {
         let ctx = await getFileInput(flags.context)
         input.requestBody.context = ctx
-      } catch (error) {
+      } catch (error : any) {
         throw new CLIError(error.message)
       }
     }

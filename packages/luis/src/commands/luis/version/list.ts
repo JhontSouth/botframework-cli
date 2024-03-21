@@ -45,7 +45,7 @@ export default class LuisVersionList extends Command {
       } else {
         await utils.writeToConsole(versionList)
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to export versions list: ${err}`)
     }
   }

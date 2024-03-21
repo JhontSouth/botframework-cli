@@ -4986,7 +4986,7 @@ export class Utility {
                 }
               }
             }
-          } catch (error) {
+          } catch (error : any) {
             Utility.debuggingLog(`Utility.processUnknownSpuriousLabelsInUtteranceLabelsMapUsingLabelSet(), utteranceKey=${utteranceKey}, utteranceLabelsMap=${DictionaryMapUtility.jsonStringifyStringKeyGenericSetNativeMapArrayValue(utteranceLabelsMap)}`);
             throw error;
           }
@@ -5130,7 +5130,7 @@ export class Utility {
                 }
               }
             }
-          } catch (error) {
+          } catch (error : any) {
             Utility.debuggingLog(`Utility.processUnknownSpuriousLabelsInUtteranceLabelsMap(), utteranceKey=${utteranceKey}, utteranceLabelsMap=${DictionaryMapUtility.jsonStringifyStringKeyGenericSetNativeMapArrayValue(utteranceLabelsMap)}`);
             throw error;
           }
@@ -5277,7 +5277,7 @@ export class Utility {
                 }
               }
             }
-          } catch (error) {
+          } catch (error : any) {
             // ---- NOTE-PLACEHOLDER ---- Utility.debuggingLog(`Utility.processUnknownSpuriousEntityLabelsInUtteranceEntityLabelsMapUsingLabelSet(), utteranceKey=${utteranceKey}, utteranceEntityLabelsMap=${DictionaryMapUtility.jsonStringifyStringKeyGenericSetNativeMapArrayValue(utteranceEntityLabelsMap)}`);
             throw error;
           }
@@ -5421,7 +5421,7 @@ export class Utility {
                 }
               }
             }
-          } catch (error) {
+          } catch (error : any) {
             // ---- NOTE-PLACEHOLDER ---- Utility.debuggingLog(`Utility.processUnknownSpuriousEntityLabelsInUtteranceEntityLabelsMap(), utteranceKey=${utteranceKey}, utteranceEntityLabelsMap=${DictionaryMapUtility.jsonStringifyStringKeyGenericSetNativeMapArrayValue(utteranceEntityLabelsMap)}`);
             throw error;
           }
@@ -5529,7 +5529,7 @@ export class Utility {
     const outputContent: string = outputLines.join(recordDelimiter);
     try {
       return Utility.dumpFile(outputFilename, `${outputContent}${recordDelimiter}`, encoding);
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingThrow(
         `storeTsvFile() cannout create an output file: ${outputFilename}, EXCEPTION=${error}`);
       return '';
@@ -6420,7 +6420,7 @@ export class Utility {
       }
       labels.add(newLabel);
       return true;
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addUniqueLabel(), error='${error}', newLabel='${newLabel}', labels='${labels}'`);
       throw error;
     }
@@ -6436,7 +6436,7 @@ export class Utility {
       }
       labels.push(newLabel);
       return true;
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addUniqueLabelToArray(), error='${error}', newLabel=${newLabel}, labels=${labels}`);
       throw error;
     }
@@ -6452,7 +6452,7 @@ export class Utility {
       }
       labels.push(newLabel);
       return true;
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`EXCEPTION calling addUniqueEntityLabelArray(), error=${error}, newLabel=${newLabel}, labels=${labels}`);
       throw error;
     }
@@ -6542,7 +6542,7 @@ export class Utility {
     try {
       const fileContent: string = fs.readFileSync(filename, encoding);
       return fileContent;
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingThrow(
         `Utility.loadFile(): filename=${filename}, exception=${error}`);
     }
@@ -6559,7 +6559,7 @@ export class Utility {
     try {
       fs.mkdirSync(path.dirname(resolvedFilename), {recursive: true});
       fs.writeFileSync(resolvedFilename, content, options);
-    } catch (error) {
+    } catch (error : any) {
       // ---- NOTE ---- An error occurred
       Utility.debuggingThrow(`FAILED to dump a file: filename=${filename}, resolvedFilename=${resolvedFilename}, exception=${error}`);
       return '';
@@ -6602,7 +6602,7 @@ export class Utility {
         }
       }
       fs.unlinkSync(entryname);
-    } catch (error) {
+    } catch (error : any) {
       // ---- NOTE ---- An error occurred
       Utility.debuggingThrow(`FAILED to unlink a entry: entryname=${entryname}, error=${error}`);
       return '';
@@ -6618,7 +6618,7 @@ export class Utility {
     //     `Utility.rename(): entrynameNew=${entrynameNew}`);
     try {
       fs.renameSync(entryname, entrynameNew);
-    } catch (error) {
+    } catch (error : any) {
       // ---- NOTE ---- An error occurred
       Utility.debuggingThrow(`FAILED to rename a entry system entry: entryname=${entrynameNew}, entryname=${entrynameNew}, error=${error}`);
       return '';

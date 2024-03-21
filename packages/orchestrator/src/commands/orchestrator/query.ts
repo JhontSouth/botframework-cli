@@ -124,7 +124,7 @@ export default class OrchestratorQuery extends Command {
         unknownLabelPredictionThresholdParameter,
         fullEmbeddings,
         limit);
-    } catch (error) {
+    } catch (error : any) {
       Utility.debuggingLog(`OrchestratorQuery.run(): error=${error}`);
       // eslint-disable-next-line no-console
       console.log(`OrchestratorQuery.run(): error=${error}`);

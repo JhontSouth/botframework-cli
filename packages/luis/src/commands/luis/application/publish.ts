@@ -57,7 +57,7 @@ export default class LuisApplicationPublish extends Command {
       }
 
       this.log(`${JSON.stringify(messageData, null, 2)}`)
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to publish app: ${err}`)
     }
   }

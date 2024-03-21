@@ -142,7 +142,7 @@ export default class OrchestratorTest extends Command {
       if (testPath) {
         try {
           this.trackEvent(`${this.id}:test`, {callee: 'test'});
-        } catch (error) {
+        } catch (error : any) {
         }
         await Orchestrator.testAsync(
           baseModelPath,
@@ -159,7 +159,7 @@ export default class OrchestratorTest extends Command {
       } else if (predictionPathConfiguration) {
         try {
           this.trackEvent(`${this.id}:assess`, {callee: 'assess'});
-        } catch (error) {
+        } catch (error : any) {
         }
         await Orchestrator.assessAsync(
           inputPathConfiguration,
@@ -169,7 +169,7 @@ export default class OrchestratorTest extends Command {
       } else {
         try {
           this.trackEvent(`${this.id}:evaluate`, {callee: 'evaluate'});
-        } catch (error) {
+        } catch (error : any) {
         }
         await Orchestrator.evaluateAsync(
           inputPathConfiguration,
@@ -183,7 +183,7 @@ export default class OrchestratorTest extends Command {
           fullEmbeddings,
           obfuscate);
       }
-    } catch (error) {
+    } catch (error : any) {
       throw (new CLIError(error));
     }
   }

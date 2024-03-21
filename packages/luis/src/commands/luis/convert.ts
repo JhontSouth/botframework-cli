@@ -79,7 +79,7 @@ export default class LuisConvert extends Command {
       } else {
         this.log(result)
       }
-    } catch (error) {
+    } catch (error : any) {
       if (error instanceof exception) {
         throw new CLIError(error.text)
       }
@@ -93,7 +93,7 @@ export default class LuisConvert extends Command {
     // write out the final file
     try {
       await fs.writeFile(validatedPath, convertedObject, 'utf-8')
-    } catch (error) {
+    } catch (error : any) {
       throw new CLIError('Unable to write file - ' + validatedPath + ' Error: ' + error.message)
     }
     this.log('Successfully wrote LUIS model to ' + validatedPath)

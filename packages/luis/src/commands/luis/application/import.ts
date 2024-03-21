@@ -67,7 +67,7 @@ export default class LuisApplicationImport extends Command {
           this.log('Config settings saved')
         }
       }
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to import app: ${err}`)
     }
   }
@@ -92,7 +92,7 @@ export default class LuisApplicationImport extends Command {
     try {
       JSON.parse(inputContent)
       /*tslint:disable: no-unused*/
-    } catch (error) {
+    } catch (error : any) {
       let LuisObject = await Luis.fromContentAsync(inputContent)
       if (!LuisObject.name) {
         LuisObject.name = name

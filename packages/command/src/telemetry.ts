@@ -16,7 +16,7 @@ class Telemetry {
     try {
       this._client.trackEvent({name, properties})
       /* tslint:disable:no-unused */
-    } catch (e) {
+    } catch (e : any) {
       // swallow the exception; we don't want to crash the app
       // on a failed attempt to collect usage data
     }

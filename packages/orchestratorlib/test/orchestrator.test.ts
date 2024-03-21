@@ -71,7 +71,7 @@ describe('OrchestratorTests', () => {
       new OrchestratorDataSource('', '', '', '', 'file', '', WeatherInputFile);
     try {
       await Orchestrator.addDataSource(dataSource);
-    } catch (error) {
+    } catch (error : any) {
       assert.ok(error.message === 'routingName parameter is required');
     }
   });
@@ -103,7 +103,7 @@ describe('OrchestratorTests', () => {
         'a5ee4d79-28e0-4757-a9f8-45ab64ee1f7e', '', '', '', 'luis', '', '');
     try {
       await Orchestrator.addDataSource(dataSource);
-    } catch (error) {
+    } catch (error : any) {
       assert.ok(error.message === 'LUIS endpoint required, ie --endpoint https://westus.api.cognitive.microsoft.com');
     }
   });

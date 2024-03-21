@@ -73,7 +73,7 @@ export class OrchestratorBuild {
         },
       };
       return {outputs: buildOutputs, settings: settings};
-    } catch (error) {
+    } catch (error : any) {
       throw new Error(error);
     }
   }

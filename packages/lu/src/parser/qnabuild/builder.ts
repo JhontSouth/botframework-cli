@@ -69,7 +69,7 @@ export class Builder {
       try {
         let result = await qnaBuilderVerbose.build(qnaFiles, log, importResolver)
         fileContent = result.parseToQnAContent()
-      } catch (err) {
+      } catch (err : any) {
         if (err.source) {
           err.text = `Invalid QnA file ${err.source}: ${err.text}`
         } else {
@@ -271,7 +271,7 @@ export class Builder {
             }
           }))
         }
-      } catch (error) {
+      } catch (error : any) {
         throw(new exception(retCode.errorCode.QNAMAKER_BUILD_FAILED, `Qnamaker build failed: ${error.message}`))
       }
 
@@ -442,7 +442,7 @@ export class Builder {
         await qnaBuildCore.replaceKB(kbId, currentKB)
 
         this.handler(`Updating finished for kb ${currentKB.name}\n`)
-      } catch (err) {
+      } catch (err : any) {
         err.text = `Updating knowledge base failed: \n${err.text}`
         throw err
       }
@@ -475,7 +475,7 @@ export class Builder {
       await qnaBuildCore.replaceKB(kbId, currentKB)
 
       this.handler(`Creating finished for kb ${currentKB.name}\n`)
-    } catch (err) {
+    } catch (err : any) {
       err.text = `Creating knowledge base failed: \n${err.text}`
       throw err
     }

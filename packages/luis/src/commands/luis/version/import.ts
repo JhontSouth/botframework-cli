@@ -53,7 +53,7 @@ export default class LuisVersionImport extends Command {
 
       const output = flags.json ? JSON.stringify({Status: 'Success', version: messageData}, null, 2) : `App version successfully imported as version ${messageData}.`
       this.log(output)
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to import app version: ${err}`)
     }
   }
@@ -63,7 +63,7 @@ export default class LuisVersionImport extends Command {
     try {
       JSON.parse(inputContent)
       /*tslint:disable: no-unused*/
-    } catch (error) {
+    } catch (error : any) {
       let LuisObject = await Luis.fromContentAsync(inputContent)
       if (!LuisObject.name) {
         LuisObject.name = `version_${versionId}_app`

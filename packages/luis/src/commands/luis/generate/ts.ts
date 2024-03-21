@@ -52,7 +52,7 @@ export default class LuisGenerateTs extends Command {
       let app: any
       try {
         app = flags.in ? await fs.readJSON(path.join(pathPrefix, flags.in)) : JSON.parse(stdInput as string)
-      } catch (error) {
+      } catch (error : any) {
         throw new CLIError(error)
       }
 
@@ -77,7 +77,7 @@ export default class LuisGenerateTs extends Command {
       )
 
       await LuisToTsConverter.writeFromLuisJson(app, flags.className, outputPath)
-    } catch (error) {
+    } catch (error : any) {
       if (error instanceof exception) {
         throw new CLIError(error.text)
       }

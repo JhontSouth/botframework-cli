@@ -88,7 +88,7 @@ export default class LuisTest extends Command {
       } else {
         this.log(result)
       }
-    } catch (err) {
+    } catch (err : any) {
       if (err instanceof exception) {
         throw new CLIError(err.text)
       }
@@ -104,7 +104,7 @@ export default class LuisTest extends Command {
     try {
       await fs.writeFile(validatedPath, convertedObject, 'utf-8')
       await fs.writeFile(validatedLogPath, log, 'utf-8')
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError('Unable to write file - ' + validatedPath + ' Error: ' + err.message)
     }
     this.log('Successfully wrote LUIS model to ' + validatedPath)

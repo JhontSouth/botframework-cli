@@ -54,7 +54,7 @@ export default class LuisApplicationQuery extends Command {
     try {
       const predictionData = await Application.query({subscriptionKey, endpoint, appId}, slotName, query, log, verbose, timezoneOffset)
       this.log(`${JSON.stringify(predictionData, null, 2)}`)
-    } catch (err) {
+    } catch (err : any) {
       throw new CLIError(`Failed to fetch prediction data: ${err}`)
     }
   }
