@@ -66,6 +66,14 @@
       "@oclif/plugin-help"
     ]
   },
+  "mocha": {
+    "extension": ".test.ts",
+    "recursive": true,
+    "require": [
+      "ts-node/register",
+      "source-map-support/register"
+    ]
+  },
   "repository": "microsoft/botframework-cli",
   "scripts": {
     "lint": "eslint . --ext .ts",
@@ -74,7 +82,7 @@
     "prepack": "tsc -b && oclif-dev manifest",
     "build": "tsc -b",
     "clean": "rimraf ./.nyc_output ./package-lock.json ./tsconfig.tsbuildinfo",
-    "test": "mocha",
+    "test": "mocha test/**/*.js",
     "coverage": "nyc npm run test",
     "report:coverage": "npm run coverage && nyc report --reporter=text-lcov | coveralls",
     "doc": "npm run build && npm run doc:readme && rimraf oclif.manifest.json",
