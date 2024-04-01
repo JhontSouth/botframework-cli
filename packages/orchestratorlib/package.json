@@ -23,7 +23,7 @@
   "homepage": "https://github.com/microsoft/botframework-cli",
   "license": "MIT",
   "mocha": {
-    "extension": ".test.ts",
+    "extension": ".test.js",
     "recursive": true,
     "require": [
       "ts-node/register",

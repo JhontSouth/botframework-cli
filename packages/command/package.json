@@ -28,7 +28,7 @@
     "posttest": "",
     "build": "tsc -b",
     "clean": "rimraf ./.nyc_output ./lib ./package-lock.json ./tsconfig.tsbuildinfo",
-    "test": "mocha test/**/*.js",
+    "test": "mocha test/**/*.ts",
     "coverage": "nyc npm run test",
     "doc": "",
     "doc:readme": "",

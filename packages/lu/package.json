@@ -15,10 +15,14 @@
   "homepage": "https://github.com/microsoft/botframework-cli",
   "license": "MIT",
   "mocha": {
-    "extension": ".test.ts",
+    "extension": [
+      ".test.js",
+      ".test.ts"
+    ],
     "recursive": true,
+    "timeout": 6000,
     "require": [
-      "ts-node/register",
+      "../../test/hook.js",
       "source-map-support/register"
     ]
   },
@@ -28,7 +32,7 @@
     "posttest": "tslint -p test -t stylish",
     "build": "tsc -b",
     "clean": "rimraf ./.nyc_output ./lib ./package-lock.json ./tsconfig.tsbuildinfo",
-    "test": "mocha test/**/*.js",
+    "test": "mocha 'test/**/*.js'",
     "coverage": "nyc npm run test",
     "doc": "",
     "doc:readme": "",

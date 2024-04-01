@@ -77,7 +77,7 @@
     "postpack": "rimraf oclif.manifest.json",
     "build": "tsc -b",
     "clean": "rimraf ./.nyc_output ./lib ./package-lock.json ./tsconfig.tsbuildinfo",
-    "test": "mocha test/**/*.js",
+    "test": "mocha test/**/*.ts",
     "coverage": "nyc npm run test",
     "doc": "npm run build && npm run doc:readme && rimraf oclif.manifest.json",
     "doc:readme": "oclif-dev manifest && oclif-dev readme",
