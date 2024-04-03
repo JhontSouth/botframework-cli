@@ -39,7 +39,7 @@
     "posttest": "",
     "build": "tsc -b",
     "clean": "rimraf ./.nyc_output ./lib ./package-lock.json ./tsconfig.tsbuildinfo",
-    "test": "mocha test/**/*.js",
+    "test": "mocha",
     "coverage": "nyc npm run test",
     "doc": "npm run build && npm run doc:readme && rimraf oclif.manifest.json",
     "doc:readme": "oclif-dev manifest && oclif-dev readme",
@@ -85,7 +85,7 @@
     "chai": "^4.2.0",
     "fetch-mock": "^7.3.9",
     "globby": "^10.0.1",
-    "mocha": "^10.4.0",
+    "mocha": "^10.0.0",
     "nock": "^11.7.0",
     "nyc": "^14.1.1",
     "ts-node": "^9.0.0",
@@ -94,4 +94,3 @@
     "typescript": "^4.0.3"
   }
 }
-"mocha": "^10.0.0"
