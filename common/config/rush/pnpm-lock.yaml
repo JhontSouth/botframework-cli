@@ -59,7 +59,7 @@ dependencies:
   md5: 2.2.1
   mime-types: 2.1.26
   minimist: 1.2.8
-  mocha: 9.2.2
+  mocha: 10.4.0
   nyc: 14.1.1
   os: 0.1.1
   pascal-case: 2.0.1
@@ -932,10 +932,6 @@ packages:
         optional: true
     resolution:
       integrity: sha512-2HFZW2FQc4MhIBB8WhDm9lVFaBDy6h9jGrJ4V2Uzxe/ON29HCHBTj3GkgcsgMWfsl2U5as+pTOr30Nibaw7qRQ==
-  /@ungap/promise-all-settled/1.1.2:
-    dev: false
-    resolution:
-      integrity: sha512-sL/cEvJWAnClXw0wHk85/2L0G6Sj8UB0Ctc1TEMbKSsmpRosqhwj9gWgFRZSrBr2f9tiXISwNhCPmlfqUqyb9Q==
   /abbrev/1.1.1:
     dev: false
     resolution:
@@ -1371,6 +1367,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==
+  /brace-expansion/2.0.1:
+    dependencies:
+      balanced-match: 1.0.0
+    dev: false
+    resolution:
+      integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==
   /braces/2.3.2:
     dependencies:
       arr-flatten: 1.1.0
@@ -2039,7 +2041,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
-  /debug/4.3.3_supports-color@8.1.1:
+  /debug/4.3.4_supports-color@8.1.1:
     dependencies:
       ms: 2.1.2
       supports-color: 8.1.1
@@ -2052,7 +2054,7 @@ packages:
       supports-color:
         optional: true
     resolution:
-      integrity: sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==
+      integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
   /decamelize/1.2.0:
     dev: false
     engines:
@@ -3170,17 +3172,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
-  /glob/7.2.0:
+  /glob/8.1.0:
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.4
+      minimatch: 5.0.1
       once: 1.4.0
-      path-is-absolute: 1.0.1
     dev: false
+    engines:
+      node: '>=12'
     resolution:
-      integrity: sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
+      integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==
   /globals/11.12.0:
     dev: false
     engines:
@@ -3261,12 +3264,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
-  /growl/1.10.5:
-    dev: false
-    engines:
-      node: '>=4.x'
-    resolution:
-      integrity: sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==
   /has-flag/2.0.0:
     dev: false
     engines:
@@ -4488,14 +4485,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
-  /minimatch/4.2.1:
+  /minimatch/5.0.1:
     dependencies:
-      brace-expansion: 1.1.11
+      brace-expansion: 2.0.1
     dev: false
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-9Uq1ChtSZO+Mxa/CL1eGizn2vRn3MlLgzhT0Iz8zaY8NdvxvB0d5QdPFmCKf7JKA9Lerx5vRrnwO03jsSfGG9g==
+      integrity: sha512-nLDxIFRyhDblz3qMuq+SoRZED4+miJ/G+tdDrjkkkRnjAsBexeGpgjLEQ0blJy7rHhR2b93rhQY4SvyWu9v03g==
   /minimist/0.0.8:
     dev: false
     resolution:
@@ -4593,38 +4590,34 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
-  /mocha/9.2.2:
+  /mocha/10.4.0:
     dependencies:
-      '@ungap/promise-all-settled': 1.1.2
       ansi-colors: 4.1.1
       browser-stdout: 1.3.1
       chokidar: 3.5.3
-      debug: 4.3.3_supports-color@8.1.1
+      debug: 4.3.4_supports-color@8.1.1
       diff: 5.0.0
       escape-string-regexp: 4.0.0
       find-up: 5.0.0
-      glob: 7.2.0
-      growl: 1.10.5
+      glob: 8.1.0
       he: 1.2.0
       js-yaml: 4.1.0
       log-symbols: 4.1.0
-      minimatch: 4.2.1
+      minimatch: 5.0.1
       ms: 2.1.3
-      nanoid: 3.3.1
       serialize-javascript: 6.0.0
       strip-json-comments: 3.1.1
       supports-color: 8.1.1
-      which: 2.0.2
-      workerpool: 6.2.0
+      workerpool: 6.2.1
       yargs: 16.2.0
       yargs-parser: 20.2.4
       yargs-unparser: 2.0.0
     dev: false
     engines:
-      node: '>= 12.0.0'
+      node: '>= 14.0.0'
     hasBin: true
     resolution:
-      integrity: sha512-L6XC3EdwT6YrIk0yXpavvLkn8h+EU+Y5UcCHKECyMbdUIxyMuZj4bX4U9e1nvnvUUvQVsV2VHQr5zLdcUkhW/g==
+      integrity: sha512-eqhGB8JKapEYcC4ytX/xrzKforgEc3j1pGlAXVy3eRwrtAy5/nIfT1SvgGzfN0XZZxeLq0aQWkOUAmqIJiv+bA==
   /mock-stdin/0.3.1:
     dev: false
     resolution:
@@ -4649,13 +4642,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
-  /nanoid/3.3.1:
-    dev: false
-    engines:
-      node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1
-    hasBin: true
-    resolution:
-      integrity: sha512-n6Vs/3KGyxPQd6uO0eH4Bv0ojGSUvuLlIHtC3Y0kEO23YRge8H9x1GCzLn28YX0H66pMkxuaeESFq4tKISKwdw==
   /nanomatch/1.2.13:
     dependencies:
       arr-diff: 4.0.0
@@ -6933,10 +6919,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==
-  /workerpool/6.2.0:
+  /workerpool/6.2.1:
     dev: false
     resolution:
-      integrity: sha512-Rsk5qQHJ9eowMH28Jwhe8HEbmdYDX4lwoMWshiCXugjtHqMD9ZbiqSDLxcsfdqsETPzVUtX5s1Z5kStiIM6l4A==
+      integrity: sha512-ILEIE97kDZvF9Wb9f6h5aXK4swSlKGUcOEGiIYb2OOu/IrDU9iwj0fD//SsA6E5ibwJxpEvhullJY4Sl4GcpAw==
   /wrap-ansi/4.0.0:
     dependencies:
       ansi-styles: 3.2.1
@@ -7182,7 +7168,7 @@ packages:
       latest-version: 4.0.0
       mime-types: 2.1.26
       minimist: 1.2.8
-      mocha: 9.2.2
+      mocha: 10.4.0
       nyc: 14.1.1
       please-upgrade-node: 3.2.0
       rimraf: 2.7.1
@@ -7195,7 +7181,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-chatdown'
     resolution:
-      integrity: sha512-PZ28ladpzoHH9TLvDbzTlQNKeK1Ejhr1yoFZ9EjIeV5EaeeSeNbXAdQlxHlH6j78dyO5pGzAcWImNPTMtW8puA==
+      integrity: sha512-ECP86ixtzEJYUVTL5qXEsj/Yn5tlfE9tR7ff+bVAkTChnALWq3YYd0/qobu0ZqADBPGAhfgaO477/9hkxQDrmg==
       tarball: 'file:projects/bf-chatdown.tgz'
     version: 0.0.0
   'file:projects/bf-cli-command.tgz':
@@ -7222,7 +7208,7 @@ packages:
       debug: 4.1.1
       fancy-test: 1.4.7
       fs-extra: 7.0.1
-      mocha: 9.2.2
+      mocha: 10.4.0
       nock: 11.9.1
       nyc: 14.1.1
       proxyquire: 2.1.3
@@ -7236,7 +7222,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-cli-command'
     resolution:
-      integrity: sha512-rDwLm5jszzZMuICIWH5Y+BlLHxu/s096PcAHVpk67ZU+/QMpDW4gk98biGWtVYA/GtLE1m3BtF6x0EN7AIRYxA==
+      integrity: sha512-WUoVPv7kHuyheRXjEmGb4zgjVI3oC4KPhc2D46ZoaQIPA8tavQqMZZbFT7MIBnymqJqBTCmEJNTxM+A+0QDk2Q==
       tarball: 'file:projects/bf-cli-command.tgz'
     version: 0.0.0
   'file:projects/bf-cli-config.tgz':
@@ -7255,7 +7241,7 @@ packages:
       cli-ux: 5.4.5
       fs-extra: 7.0.1
       globby: 10.0.2
-      mocha: 9.2.2
+      mocha: 10.4.0
       nyc: 14.1.1
       rimraf: 2.7.1
       ts-node: 9.0.0_typescript@4.0.3
@@ -7265,7 +7251,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-cli-config'
     resolution:
-      integrity: sha512-JCgcT1J/x5iBkY1wf47f+z8jwzBYGSxYdg4be/PKPWe+yrMZ8YzpNBlIDwTA1C5sXq/oGqrfzNwyNMwP/w30Rw==
+      integrity: sha512-tkIF2/XzNa4VycVSPNgRJ4cgmb5RdykJ0WUBiGIaWdKR4g2aVJdT36BsCOTJt6FQi3YsrV2Dzt7PCQ/GG+5rkA==
       tarball: 'file:projects/bf-cli-config.tgz'
     version: 0.0.0
   'file:projects/bf-cli-plugins.tgz':
@@ -7286,7 +7272,7 @@ packages:
       eslint-config-oclif: 3.1.0_eslint@5.16.0
       eslint-config-oclif-typescript: 0.1.0_eslint@5.16.0+typescript@4.0.3
       globby: 10.0.2
-      mocha: 9.2.2
+      mocha: 10.4.0
       nyc: 14.1.1
       rimraf: 2.7.1
       ts-node: 9.0.0_typescript@4.0.3
@@ -7295,7 +7281,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-cli-plugins'
     resolution:
-      integrity: sha512-u9QkvCAs1f3fbLFmcR6dqvDqGIU8/pAbhcmHKGlI8WV7HiwWXhgZczt2SiT8jQNkEMSxs1VGZI76NpcLQmpnxQ==
+      integrity: sha512-s6np+t1Bg+aP+FJtuyqiVHs8m0Yn6JWiy9oXMMgJGXkvf1lFo7aaecTrKUQvKq8To0CA//xsb3YyrE1A18qAAg==
       tarball: 'file:projects/bf-cli-plugins.tgz'
     version: 0.0.0
   'file:projects/bf-dialog.tgz':
@@ -7326,7 +7312,7 @@ packages:
       https-proxy-agent: 5.0.0
       json-ptr: 3.1.1
       json-schema-merge-allof: 0.7.0
-      mocha: 9.2.2
+      mocha: 10.4.0
       nock: 13.0.11
       nyc: 14.1.1
       os: 0.1.1
@@ -7342,7 +7328,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-dialog'
     resolution:
-      integrity: sha512-fWDwkfInnDAqU7gJD1ZW5MkOPG29VMrKQmQ1UlFjp9hXVdxe5biCg3T4YjC6GOKQxzkwcDJs4npTIQryVmFTgw==
+      integrity: sha512-7/pRaipLidMkC7q8VDyesWHzg5MC3VQ4DT0/KJOpIGiaPscKYUOhpNv07v90CD99el6YLM/eL+SB12clOWSnog==
       tarball: 'file:projects/bf-dialog.tgz'
     version: 0.0.0
   'file:projects/bf-dispatcher.tgz':
@@ -7360,7 +7346,7 @@ packages:
       argparse: 1.0.10
       chai: 4.2.0
       globby: 10.0.2
-      mocha: 9.2.2
+      mocha: 10.4.0
       nyc: 14.1.1
       readline-sync: 1.4.10
       rimraf: 3.0.2
@@ -7372,7 +7358,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-dispatcher'
     resolution:
-      integrity: sha512-8bLbA2fqy6tm+cehouVubqKE3fHKfho5zzZXYUuGgAkggzB+PzKXYiwODoT6kjZclK0nBwOl2oU+R8Quilyg5w==
+      integrity: sha512-R1psV/2nyltE602kYHkCb5bye9W/9UJC9oZhx2RgsGJHPsf3GuY6Axm7GRurJy5rKBW2vamLg5sb6wwl4zjA1Q==
       tarball: 'file:projects/bf-dispatcher.tgz'
     version: 0.0.0
   'file:projects/bf-lg-cli.tgz':
@@ -7402,7 +7388,7 @@ packages:
       globby: 10.0.2
       https-proxy-agent: 5.0.0
       lodash: 4.17.21
-      mocha: 9.2.2
+      mocha: 10.4.0
       nyc: 14.1.1
       read-text-file: 1.1.0
       readline-sync: 1.4.10
@@ -7413,7 +7399,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-lg-cli'
     resolution:
-      integrity: sha512-l3o1cRvuRV61WTbAkph3+apK0mPfqEVjG+/49dMYlD0pWtAXETgMDDIxIMtOLanFwv+jg9zyafYnDldmpSa9oA==
+      integrity: sha512-IUpJu8r6ryh2F0QOghh/xhZOG/7GyEn9g0zk7wNYPxvIW4U2wxyk2tPxtztdPCwfhJoBzxCCYMWfV2Y7UsePUQ==
       tarball: 'file:projects/bf-lg-cli.tgz'
     version: 0.0.0
   'file:projects/bf-lu.tgz':
@@ -7438,7 +7424,7 @@ packages:
       https-proxy-agent: 5.0.0
       intercept-stdout: 0.1.2
       lodash: 4.17.21
-      mocha: 9.2.2
+      mocha: 10.4.0
       nock: 11.9.1
       nyc: 14.1.1
       rimraf: 2.7.1
@@ -7451,7 +7437,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-lu'
     resolution:
-      integrity: sha512-e6ROftpDm3jxGrFXmpls7a5yIvpgXii1RZ3fMCnSzU2HkUhBNpHl7PM/d+AtDS+S6nLLAJGrO7aDuCENBBYw9w==
+      integrity: sha512-qmWfVEA449b8Cga3a0QPv9ohD7zgsfxw8M+wETKpyMsHnaxw4dFkOrLFwxg1h3lBYLb+eVciqOS2ihy0jG7TEw==
       tarball: 'file:projects/bf-lu.tgz'
     version: 0.0.0
   'file:projects/bf-luis-cli.tgz':
@@ -7480,7 +7466,7 @@ packages:
       fs-extra: 8.1.0
       globby: 10.0.2
       lodash: 4.17.21
-      mocha: 9.2.2
+      mocha: 10.4.0
       nock: 11.9.1
       node-fetch: 2.6.0
       nyc: 14.1.1
@@ -7495,7 +7481,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-luis-cli'
     resolution:
-      integrity: sha512-Iyc/0SoA1N+TD5mDdpx9FbDsp8Of3Sw6l3fjAX4W1vD/vrwNK+Cd76zOGDfn/N48FHYTlXtXzgkvWFSHw2Tdqg==
+      integrity: sha512-X+NWn6o9j0oG6ww+r2LWcx/GH0G2Ezn6LuQn1K1MZ4baRUgMCAhnyFrpUY/2anCoIm1VIUFJcg2zimH4u6Jpng==
       tarball: 'file:projects/bf-luis-cli.tgz'
     version: 0.0.0
   'file:projects/bf-orchestrator-cli.tgz':
@@ -7517,7 +7503,7 @@ packages:
       eslint-config-oclif-typescript: 0.1.0_eslint@5.16.0+typescript@4.0.3
       fs-extra: 9.0.1
       globby: 10.0.2
-      mocha: 9.2.2
+      mocha: 10.4.0
       nyc: 14.1.1
       read-text-file: 1.1.0
       rimraf: 3.0.2
@@ -7528,7 +7514,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-orchestrator-cli'
     resolution:
-      integrity: sha512-kouIhNUkZw3UvwoNZmamzSDhmTquosFF7SX5b3V56jp2Ki5bIdi8G6c1HE2VYAfIhnELglq2zIKXarlyqGRRCg==
+      integrity: sha512-RUfdwe9ZexGFiot7P7jV1hX8Vk5p1hLytp0WPBgO1/WeHu3GGwUsSjBEFQTyg3zIOV6TDyMF1U4TEMet0JTcQg==
       tarball: 'file:projects/bf-orchestrator-cli.tgz'
     version: 0.0.0
   'file:projects/bf-orchestrator.tgz':
@@ -7545,7 +7531,7 @@ packages:
       fast-text-encoding: 1.0.3
       fs-extra: 9.0.1
       https-proxy-agent: 5.0.0
-      mocha: 9.2.2
+      mocha: 10.4.0
       nock: 11.9.1
       nyc: 14.1.1
       read-text-file: 1.1.0
@@ -7558,7 +7544,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-orchestrator'
     resolution:
-      integrity: sha512-etTKJhPsD2zjFFrBf/gZ3m9tKDgMVeab28KtpDgvH5nHfpQ6JQFNOztDIVORSDLUxRGC+klYBh/F59tTItRJ3A==
+      integrity: sha512-uhHqq0BDz9Ak7HRoIC6UEJV4LyanM2Fzb/ADCbUMWLHudiRvTl24JmqR3F4AM3Cj8rEmA599vdmuZWiX25Owtw==
       tarball: 'file:projects/bf-orchestrator.tgz'
     version: 0.0.0
   'file:projects/bf-qnamaker.tgz':
@@ -7589,7 +7575,7 @@ packages:
       https-proxy-agent: 2.2.4
       intercept-stdout: 0.1.2
       md5: 2.2.1
-      mocha: 9.2.2
+      mocha: 10.4.0
       nock: 11.9.1
       node-fetch: 2.6.0
       nyc: 14.1.1
@@ -7607,7 +7593,7 @@ packages:
     dev: false
     name: '@rush-temp/bf-qnamaker'
     resolution:
-      integrity: sha512-HbLtLNV0NuqtfBEaPbqyIXKI5pnI2vA7UoYhTJnmmcl1KVpfHoDEOhMFeEkNauth5ZdnfEl2mLIxJl4oB9dMjA==
+      integrity: sha512-KJzwVAAKDhP0cvVdgzCDM9CYKnQ+FQK1bZmSi1LGb51P30tuxG6jPXVi/BoCb/SxqEJkYL7baMZptC8nXakZgg==
       tarball: 'file:projects/bf-qnamaker.tgz'
     version: 0.0.0
   'file:projects/botframework-cli.tgz':
@@ -7631,7 +7617,7 @@ packages:
       globby: 8.0.2
       is-ci: 2.0.0
       latest-version: 4.0.0
-      mocha: 9.2.2
+      mocha: 10.4.0
       nock: 11.9.1
       nyc: 14.1.1
       rimraf: 2.7.1
@@ -7643,7 +7629,7 @@ packages:
     dev: false
     name: '@rush-temp/botframework-cli'
     resolution:
-      integrity: sha512-DnimZ1GNQFGojxJjVbGl+6WwMzqw6/diN4DK+zlWBvVa/TX5rZbK3O3fPMvXVF3Ak3Aeu758X0EhNuaCPViDLw==
+      integrity: sha512-xjsvb/zuwokOZAWd7wY0rEToWBuEQP0LNIceMCHrpHrCDfSXEVA0XGF9XiQEyq7+u4NQ8hLo0rDjLVfFaceO0g==
       tarball: 'file:projects/botframework-cli.tgz'
     version: 0.0.0
 registry: ''
@@ -7708,7 +7694,7 @@ specifiers:
   md5: ^2.2.1
   mime-types: ^2.1.18
   minimist: ^1.2.6
-  mocha: ^9.2.2
+  mocha: ^10.4.0
   nyc: ^14.1.1
   os: ~0.1.1
   pascal-case: ^2.0.1
