@@ -25,10 +25,14 @@
     ]
   },
   "mocha": {
-    "extension": ".test.js",
+    "extension": [
+      ".test.js",
+      ".test.ts"
+    ],
     "recursive": true,
+    "timeout": 30000,
     "require": [
-      "ts-node/register",
+      "../../test/hook.js",
       "source-map-support/register"
     ]
   },
@@ -79,7 +83,7 @@
     "@oclif/test": "^1.2.4",
     "@oclif/tslint": "^3.1.1",
     "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.7",
+    "@types/mocha": "^10.0.6",
     "@types/nock": "^11.1.0",
     "@types/node": "^10.14.13",
     "chai": "^4.2.0",

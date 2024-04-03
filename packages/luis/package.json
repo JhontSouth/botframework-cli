@@ -24,10 +24,15 @@
     ]
   },
   "mocha": {
-    "extension": ".test.js",
+    "extension": [
+      ".test.js",
+      ".test.ts"
+    ],
     "recursive": true,
+    "timeout": 150000,
+    "slow": 10000,
     "require": [
-      "ts-node/register",
+      "../../test/hook.js",
       "source-map-support/register"
     ]
   },
@@ -38,7 +43,7 @@
     "posttest": "tslint -p test -t stylish",
     "build": "tsc -b",
     "clean": "rimraf ./.nyc_output ./lib ./package-lock.json ./tsconfig.tsbuildinfo",
-    "test": "mocha test/**/*.js",
+    "test": "mocha",
     "test:functional": "mocha --config ./test/functional/.mocharc.json **/functional/*.test.{js,ts}",
     "coverage": "nyc npm run test",
     "doc": "npm run build && npm run doc:readme && rimraf oclif.manifest.json",
@@ -71,7 +76,7 @@
     "@oclif/tslint": "~3.1.1",
     "@types/chai": "^4.2.4",
     "@types/lodash": "~4.14.159",
-    "@types/mocha": "^5.2.7",
+    "@types/mocha": "^10.0.6",
     "@types/nock": "^11.1.0",
     "@types/node": "^10.17.4",
     "@types/rimraf": "^2.0.3",

@@ -15,7 +15,7 @@
   "devDependencies": {
     "@types/argparse": "^1.0.36",
     "@types/chai": "^4.2.4",
-    "@types/mocha": "^5.2.7",
+    "@types/mocha": "^10.0.6",
     "@types/node": "^10.17.3",
     "chai": "^4.2.0",
     "globby": "^10.0.1",
@@ -40,10 +40,14 @@
   ],
   "license": "MIT",
   "mocha": {
-    "extension": ".test.js",
+    "extension": [
+      ".test.js",
+      ".test.ts"
+    ],
     "recursive": true,
+    "timeout": 10000,
     "require": [
-      "ts-node/register",
+      "../../test/hook.js",
       "source-map-support/register"
     ]
   },
@@ -53,7 +57,7 @@
     "posttest": "tslint -p test -t stylish",
     "build": "tsc -b",
     "clean": "rimraf ./.nyc_output ./lib ./package-lock.json ./tsconfig.tsbuildinfo",
-    "test": "mocha test/**/*.js",
+    "test": "mocha",
     "coverage": "nyc npm run test",
     "doc": "",
     "doc:readme": "",
