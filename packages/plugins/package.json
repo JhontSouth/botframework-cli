@@ -36,7 +36,7 @@
   "files": [
     "/lib",
     "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
+    "mocha": "^10.0.0"son"
   ],
   "homepage": "https://github.com/microsoft/botframework-cli",
   "keywords": [
