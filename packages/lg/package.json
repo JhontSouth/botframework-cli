@@ -9,7 +9,7 @@
     "@types/readline-sync": "^1.4.3",
     "@microsoft/bf-cli-command": "1.0.0",
     "@oclif/command": "^1.5.19",
-    "@oclif/config": "^1.18.0",
+    "@oclif/config": "^1.15.1",
     "botbuilder-lg": "4.13.0",
     "adaptive-expressions": "4.13.0",
     "delay": "^4.3.0",

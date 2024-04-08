@@ -41,7 +41,7 @@
     "@microsoft/bf-cli-command": "1.0.0",
     "@microsoft/bf-lu": "1.0.0",
     "@oclif/command": "~1.5.19",
-    "@oclif/config": "~1.18.0",
+    "@oclif/config": "~1.15.1",
     "@oclif/errors": "~1.2.2",
     "@oclif/parser": "~3.8.4",
     "delay": "^5.0.0",
