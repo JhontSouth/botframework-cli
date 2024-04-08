@@ -44,7 +44,7 @@
     "@microsoft/bf-cli-command": "1.0.0",
     "@microsoft/bf-lu": "1.0.0",
     "@oclif/command": "~1.5.19",
-    "@oclif/config": "~1.14.0",
+    "@oclif/config": "~1.18.0",
     "@oclif/errors": "~1.2.2",
     "@types/node-fetch": "~2.5.5",
     "@types/sinon": "^7.5.0",

@@ -609,7 +609,7 @@ packages:
     engines: {node: '>=8.0.0'}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dependencies:
-      '@oclif/config': 1.15.1
+      '@oclif/config': 1.18.17
       '@oclif/errors': 1.3.6
       '@oclif/parser': 3.8.17
       '@oclif/plugin-help': 2.2.3
@@ -670,32 +670,6 @@ packages:
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dependencies:
       '@oclif/parser': 3.8.4
-      debug: 4.3.4
-      tslib: 1.11.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@oclif/config/1.14.0:
-    resolution: {integrity: sha512-KsOP/mx9lzTah+EtGqLUXN3PDL0J3zb9/dTneFyiUK2K6T7vFEGhV6OasmqTh4uMZHGYTGrNPV8x/Yw6qZNL6A==}
-    engines: {node: '>=8.0.0'}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    dependencies:
-      '@oclif/errors': 1.3.6
-      '@oclif/parser': 3.8.17
-      debug: 4.3.4
-      tslib: 1.11.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@oclif/config/1.15.1:
-    resolution: {integrity: sha512-GdyHpEZuWlfU8GSaZoiywtfVBsPcfYn1KuSLT1JTfvZGpPG6vShcGr24YZ3HG2jXUFlIuAqDcYlTzOrqOdTPNQ==}
-    engines: {node: '>=8.0.0'}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    dependencies:
-      '@oclif/errors': 1.3.6
-      '@oclif/parser': 3.8.17
       debug: 4.3.4
       tslib: 1.11.1
     transitivePeerDependencies:
@@ -799,7 +773,7 @@ packages:
     hasBin: true
     dependencies:
       '@oclif/command': 1.8.36
-      '@oclif/config': 1.15.1
+      '@oclif/config': 1.18.17
       '@oclif/errors': 1.3.6
       '@oclif/plugin-help': 2.2.3
       cli-ux: 5.6.7
@@ -7345,13 +7319,13 @@ packages:
     dev: false
 
   file:projects/bf-chatdown.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-sSt3kXFS3YpShNtuLZS8PcEX6fj1I9bDyHmR6GbXgHDLLeYln8BD0mtuQyTsmZJwG08yrj+ri6MZe95lc6iyBg==, tarball: file:projects/bf-chatdown.tgz}
+    resolution: {integrity: sha512-ud2jwJB0rmliNnSexWBBglfs1gCDO/qf9OS34flLS9R/bSnZsLje782dYGQCOLABGHV/FSDyHjA7vsLNexATbg==, tarball: file:projects/bf-chatdown.tgz}
     id: file:projects/bf-chatdown.tgz
     name: '@rush-temp/bf-chatdown'
     version: 0.0.0
     dependencies:
       '@oclif/command': 1.5.19
-      '@oclif/config': 1.14.0
+      '@oclif/config': 1.18.17
       '@oclif/dev-cli': 1.22.2
       '@oclif/errors': 1.2.2
       '@oclif/plugin-help': 2.2.3
@@ -7391,13 +7365,13 @@ packages:
     dev: false
 
   file:projects/bf-cli-command.tgz:
-    resolution: {integrity: sha512-14gPdDubuTPysBjnOstLnMkSJuQlGkHbTSuzKnBoOd1H+WYrTBdkaiQn0bj1v3lrqxa4fJmq/P71kMyorBPXmw==, tarball: file:projects/bf-cli-command.tgz}
+    resolution: {integrity: sha512-10tOgawaJCODNWvgrrHU34m9di467PDLpel29dNotxY/wnOfgndcV+eKpPQAU5HvqQRlRAZuvAYMWYHiOY/Xzw==, tarball: file:projects/bf-cli-command.tgz}
     name: '@rush-temp/bf-cli-command'
     version: 0.0.0
     dependencies:
       '@istanbuljs/nyc-config-typescript': 1.0.2_nyc@15.1.0
       '@oclif/command': 1.5.19
-      '@oclif/config': 1.14.0
+      '@oclif/config': 1.18.17
       '@oclif/errors': 1.2.2
       '@oclif/plugin-help': 2.2.3
       '@oclif/plugin-plugins': 1.10.11
@@ -7434,12 +7408,12 @@ packages:
     dev: false
 
   file:projects/bf-cli-config.tgz:
-    resolution: {integrity: sha512-gYJ0YSkz33aWZQhSYPXuZUD6uQdNiTCOkoTAxYSKckRlwev4L0jWGj934ckf+fukNy9FRPnBXa/WmlwDarnpng==, tarball: file:projects/bf-cli-config.tgz}
+    resolution: {integrity: sha512-6gO1J9vkc8JqBVRWqfygHzhTqKTyhHIyOK6jDxM5ExNcKxa/KjA/D/3fATqJtDYVLbrD7oQynzNRPiGW5BhOHA==, tarball: file:projects/bf-cli-config.tgz}
     name: '@rush-temp/bf-cli-config'
     version: 0.0.0
     dependencies:
       '@oclif/command': 1.5.19
-      '@oclif/config': 1.14.0
+      '@oclif/config': 1.18.17
       '@oclif/dev-cli': 1.22.2
       '@oclif/errors': 1.2.2
       '@oclif/plugin-help': 2.2.3
@@ -7464,12 +7438,12 @@ packages:
     dev: false
 
   file:projects/bf-cli-plugins.tgz:
-    resolution: {integrity: sha512-JJnGUSWOof0wmT4whjiHVFR31WKR/OKnflT8Ds6uYRilDSZAA8iWGdGI1GBe6jB+r8dg0B+ku8a1+94NYIfx5w==, tarball: file:projects/bf-cli-plugins.tgz}
+    resolution: {integrity: sha512-lxqwqUeEF0NuROr1rBiRXVvaVXrbLIQ14/b6D4QhzD8geFASom0d43iOx6CkYsHGXb965GQzoG0PM7hWZ0dFXw==, tarball: file:projects/bf-cli-plugins.tgz}
     name: '@rush-temp/bf-cli-plugins'
     version: 0.0.0
     dependencies:
       '@oclif/command': 1.5.19
-      '@oclif/config': 1.14.0
+      '@oclif/config': 1.18.17
       '@oclif/dev-cli': 1.22.2
       '@oclif/errors': 1.2.2
       '@oclif/plugin-help': 2.2.3
@@ -7495,7 +7469,7 @@ packages:
     dev: false
 
   file:projects/bf-dialog.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-ur1yuC3bHWSnIg4VYNNPvk0G98x+xwwIluE9kcCIDAenbXTqmNCu/z6RwCwxkUzguYvMUpBpIztPRogO9asuvA==, tarball: file:projects/bf-dialog.tgz}
+    resolution: {integrity: sha512-+JzqyYp/eoI9eTFAbvSdyqAs6H3XGqzf+lZK45AV95DOIC2mbW5IajOdtpPl+VXDqdv29IzTah95PmXFw1NSfQ==, tarball: file:projects/bf-dialog.tgz}
     id: file:projects/bf-dialog.tgz
     name: '@rush-temp/bf-dialog'
     version: 0.0.0
@@ -7503,7 +7477,7 @@ packages:
       os: 0.1.1
       '@apidevtools/json-schema-ref-parser': 9.0.1
       '@oclif/command': 1.5.19
-      '@oclif/config': 1.14.0
+      '@oclif/config': 1.18.17
       '@oclif/dev-cli': 1.22.2
       '@oclif/errors': 1.2.2
       '@oclif/plugin-help': 2.2.3
@@ -7576,13 +7550,13 @@ packages:
     dev: false
 
   file:projects/bf-lg-cli.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-9eDwpKpQCL7wT/HORom73R3WtP29Ux0AZ1DoeTm84I5Lp73c2zobTSZGeh+MGpY6OgpyDoN16GGunGXwU3guBg==, tarball: file:projects/bf-lg-cli.tgz}
+    resolution: {integrity: sha512-cdjWX66I6hrUWEcXAjq27GPBWFKzTYRCMVv8YTHJcgo2Lk0UMlN+1wiJm47SCtaudPeH6f4Tysd98rZKB80qCw==, tarball: file:projects/bf-lg-cli.tgz}
     id: file:projects/bf-lg-cli.tgz
     name: '@rush-temp/bf-lg-cli'
     version: 0.0.0
     dependencies:
       '@oclif/command': 1.8.36
-      '@oclif/config': 1.15.1
+      '@oclif/config': 1.18.17
       '@oclif/dev-cli': 1.22.2
       '@oclif/errors': 1.3.6
       '@oclif/plugin-help': 2.2.3
@@ -7660,7 +7634,7 @@ packages:
     dev: false
 
   file:projects/bf-luis-cli.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-VbAbaw6fP8RgEi7RhGQPVbipzLkImdYNzQ/0uu/Ia4UcoI0olhUZszO8HteZqiXgOtXZHFOBjfiBGB4rKi4OXg==, tarball: file:projects/bf-luis-cli.tgz}
+    resolution: {integrity: sha512-28aZrQleVzF+ez4H7qkjxcneKFaJiqtVGavyrF/9s7fFHQpJnsxpRhIGdcgggk8fH7cAsKnyVu86SfUJn9JKLg==, tarball: file:projects/bf-luis-cli.tgz}
     id: file:projects/bf-luis-cli.tgz
     name: '@rush-temp/bf-luis-cli'
     version: 0.0.0
@@ -7669,7 +7643,7 @@ packages:
       '@azure/cognitiveservices-luis-runtime': 5.0.0
       '@azure/ms-rest-azure-js': 2.0.1
       '@oclif/command': 1.5.19
-      '@oclif/config': 1.14.0
+      '@oclif/config': 1.18.17
       '@oclif/dev-cli': 1.22.2
       '@oclif/errors': 1.2.2
       '@oclif/plugin-help': 2.2.3
@@ -7707,12 +7681,12 @@ packages:
     dev: false
 
   file:projects/bf-orchestrator-cli.tgz:
-    resolution: {integrity: sha512-+R16OjTzccaJvvVLzm4u1gN4kofRWZg53cigZDF1O5Y5pbGbJN0P5YGESjFWO6DvxAYglsEhHFSOXmre1yNq4g==, tarball: file:projects/bf-orchestrator-cli.tgz}
+    resolution: {integrity: sha512-FC3laBJ9xCH1UxxDvM/EfXvFVcEuoz6T8zczzfjafTeIf3w0gLAXHIkE8t/yGS67wV/8iQq2mo3U+Oim4Jl2Aw==, tarball: file:projects/bf-orchestrator-cli.tgz}
     name: '@rush-temp/bf-orchestrator-cli'
     version: 0.0.0
     dependencies:
       '@oclif/command': 1.8.36
-      '@oclif/config': 1.15.1
+      '@oclif/config': 1.18.17
       '@oclif/dev-cli': 1.22.2
       '@oclif/errors': 1.2.2
       '@oclif/plugin-help': 2.2.3
@@ -7774,13 +7748,13 @@ packages:
     dev: false
 
   file:projects/bf-qnamaker.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-aBZHfRwAD2gZPkSFkO13Iovy7ElUTh3pl93OtSbmsNHtWyGxAHLzQdqd0/HVhW8fSz6mXdiSW6YrsvtArHWlJg==, tarball: file:projects/bf-qnamaker.tgz}
+    resolution: {integrity: sha512-4cSFdpvT7MqM7JPQKTA29QCeIhzBXENZlyTnkDTVvIKaSqPuuLcLjKlqWpwVuSlqjJUApfcf0aW5Y8ImW7i/pg==, tarball: file:projects/bf-qnamaker.tgz}
     id: file:projects/bf-qnamaker.tgz
     name: '@rush-temp/bf-qnamaker'
     version: 0.0.0
     dependencies:
       '@oclif/command': 1.5.19
-      '@oclif/config': 1.14.0
+      '@oclif/config': 1.18.17
       '@oclif/dev-cli': 1.22.2
       '@oclif/errors': 1.2.2
       '@oclif/parser': 3.8.17
@@ -7826,13 +7800,13 @@ packages:
     dev: false
 
   file:projects/botframework-cli.tgz:
-    resolution: {integrity: sha512-lFn+Qe99wN0bfWsNn3OJyOFuvZUQ4LEj197AG7cqqm39W3zEueE0/r8RDVmtGm0ehiVbKGugNSQ1hJDoXFcaPA==, tarball: file:projects/botframework-cli.tgz}
+    resolution: {integrity: sha512-rgGI5v9TlQSwu+aCXXHDYOULCRxzCvZVWfzEFu4T317DxjwdcxXHJimjVetqkS6sMpoXeB1D4U5g+1DLGC2dyw==, tarball: file:projects/botframework-cli.tgz}
     name: '@rush-temp/botframework-cli'
     version: 0.0.0
     dependencies:
       '@istanbuljs/nyc-config-typescript': 1.0.2_nyc@15.1.0
       '@oclif/command': 1.5.19
-      '@oclif/config': 1.14.0
+      '@oclif/config': 1.18.17
       '@oclif/dev-cli': 1.22.2
       '@oclif/errors': 1.2.2
       '@oclif/plugin-help': 2.1.6
