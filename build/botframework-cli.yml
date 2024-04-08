@@ -11,120 +11,105 @@ pool:
 pr:
   branches:
     include:
-     - main
+      - main
 
 jobs:
   - job: CLI
     variables:
       runCodesignValidationInjection: false # Disables the unnecessary injected CodeSign Validation step
-      buildVersion: '4.10.0-preview.$(Build.BuildId)'
+      buildVersion: "4.10.0-preview.$(Build.BuildId)"
       _version: ${{coalesce(variables.version, variables.buildVersion)}}
 
     steps:
-    - task: colinsalmcorner.colinsalmcorner-buildtasks.tag-build-task.tagBuildOrRelease@0
-      displayName: 'Tag Build with version number'
-      inputs:
-        tags: 'Version=$(_version)'
-      continueOnError: true
+      - task: NodeTool@0
+        displayName: "Use Node 16.x"
+        inputs:
+          versionSpec: 16.x
 
-    - task: NodeTool@0
-      displayName: 'Use Node 16.x'
-      inputs:
-        versionSpec: 16.x
+      - task: Npm@1
+        displayName: "npm install --global @microsoft/rush"
+        inputs:
+          command: custom
+          verbose: false
+          customCommand: "install --global @microsoft/rush@5.33.0"
 
-    - task: Npm@1
-      displayName: 'npm install --global @microsoft/rush'
-      inputs:
-        command: custom
-        verbose: false
-        customCommand: 'install --global @microsoft/rush@5.33.0'
+      - script: "rush update"
+        displayName: "rush update"
 
-    - script: 'rush update'
-      displayName: 'rush update'
+      - script: "rush build -p 2"
+        displayName: "rush build -p 2"
 
-    - script: 'rush build -p 2'
-      displayName: 'rush build -p 2'
+      - script: "rush coverage -v"
+        displayName: "rush coverage -v"
 
-    - script: 'rush coverage -v'
-      displayName: 'rush coverage -v'
+      - bash: "bash <(curl -s https://codecov.io/bash)"
+        displayName: "push coverage report to codecov.io - https://codecov.io/github/microsoft/botframework-cli"
+        env:
+          CODECOV_TOKEN: $(TokenForCodecov)
 
-    - bash: 'bash <(curl -s https://codecov.io/bash)'
-      displayName: 'push coverage report to codecov.io - https://codecov.io/github/microsoft/botframework-cli'
-      env:
-        CODECOV_TOKEN: $(TokenForCodecov)
+      - powershell: |
+          # If commit Build.SourceVersion exists in Github, we can show a nicer codecov.io URL
+          $result = $(git rev-list HEAD..$(Build.SourceVersion) 2>&1);
+          if ($result -like "*fatal*") { $Url = "https://codecov.io/github/microsoft/botframework-cli" }
+          else { $Url = "https://codecov.io/github/microsoft/botframework-cli/commit/$(Build.SourceVersion)" };
+          Write-Host "##vso[task.setvariable variable=CodecovUrl;]$Url"
+        displayName: "Set CodecovUrl"
 
-    - powershell: |
-        # If commit Build.SourceVersion exists in Github, we can show a nicer codecov.io URL
-        $result = $(git rev-list HEAD..$(Build.SourceVersion) 2>&1);
-        if ($result -like "*fatal*") { $Url = "https://codecov.io/github/microsoft/botframework-cli" }
-        else { $Url = "https://codecov.io/github/microsoft/botframework-cli/commit/$(Build.SourceVersion)" };
-        Write-Host "##vso[task.setvariable variable=CodecovUrl;]$Url"
-      displayName: 'Set CodecovUrl'
+      - task: PublishCodeCoverageResults@1
+        displayName: "Populate Code Coverage tab"
+        inputs:
+          codeCoverageTool: "cobertura" # Options: cobertura, jaCoCo
+          summaryFileLocation: $(System.DefaultWorkingDirectory)/packages/*/coverage/cobertura-coverage.xml
+        continueOnError: true
 
-    - task: colinsalmcorner.colinsalmcorner-buildtasks.tag-build-task.tagBuildOrRelease@0
-      displayName: 'Tag Build with coverage url'
-      inputs:
-        tags: '$(CodecovUrl)'
-      continueOnError: true
-  
-    - task: PublishCodeCoverageResults@1
-      displayName: 'Populate Code Coverage tab'
-      inputs:
-        codeCoverageTool: 'cobertura' # Options: cobertura, jaCoCo
-        summaryFileLocation: $(System.DefaultWorkingDirectory)/packages/*/coverage/cobertura-coverage.xml
-      continueOnError: true
+      - task: CopyFiles@2
+        displayName: "Copy coverage files to: $(Build.StagingDirectory)/coverage"
+        inputs:
+          SourceFolder: "$(Build.SourcesDirectory)/packages"
+          Contents: "*/coverage/**"
+          TargetFolder: "$(Build.StagingDirectory)/coverage"
 
-    - task: CopyFiles@2
-      displayName: 'Copy coverage files to: $(Build.StagingDirectory)/coverage'
-      inputs:
-        SourceFolder: '$(Build.SourcesDirectory)/packages'
-        Contents: '*/coverage/**'
-        TargetFolder: '$(Build.StagingDirectory)/coverage'
+      - task: PublishBuildArtifacts@1
+        displayName: "Publish Artifact: coverage"
+        inputs:
+          PathtoPublish: "$(Build.ArtifactStagingDirectory)/coverage"
+          ArtifactName: coverage
 
-    - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact: coverage'
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)/coverage'
-        ArtifactName: coverage
-    
-    - script: 'rush posttest'
-      displayName: 'rush posttest'
+      - script: "rush posttest"
+        displayName: "rush posttest"
 
-    - script: 'node ./common/scripts/version-and-pack.js --version $(_version)'
-      displayName: 'Version and Pack'
+      - script: "node ./common/scripts/version-and-pack.js --version $(_version)"
+        displayName: "Version and Pack"
 
-    - task: CopyFiles@2
-      displayName: 'Copy packages to: $(Build.ArtifactStagingDirectory)/drop'
-      inputs:
-        SourceFolder: ./.output
-        Contents: '**/*.tgz'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/drop'
-        flattenFolders: true
+      - task: CopyFiles@2
+        displayName: "Copy packages to: $(Build.ArtifactStagingDirectory)/drop"
+        inputs:
+          SourceFolder: ./.output
+          Contents: "**/*.tgz"
+          TargetFolder: "$(Build.ArtifactStagingDirectory)/drop"
+          flattenFolders: true
 
-    - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact: drop'
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)/drop'
-        ArtifactName: drop
+      - task: PublishBuildArtifacts@1
+        displayName: "Publish Artifact: drop"
+        inputs:
+          PathtoPublish: "$(Build.ArtifactStagingDirectory)/drop"
+          ArtifactName: drop
 
-    # Delete pnpm files
-    - task: DeleteFiles@1
-      inputs:
-        #SourceFolder: # Optional
-        Contents: './common/temp' 
-        #RemoveSourceFolder: # Optional
+      # Delete pnpm files
+      - task: DeleteFiles@1
+        inputs:
+          #SourceFolder: # Optional
+          Contents: "./common/temp"
+          #RemoveSourceFolder: # Optional
 
-    # Delete pnpm lock yaml
-    - task: DeleteFiles@1
-      inputs:
-        #SourceFolder: # Optional
-        Contents: './common/config/rush/pnpm-lock.yaml' 
-        #RemoveSourceFolder: # Optional       
+      # Delete pnpm lock yaml
+      - task: DeleteFiles@1
+        inputs:
+          #SourceFolder: # Optional
+          Contents: "./common/config/rush/pnpm-lock.yaml"
+          #RemoveSourceFolder: # Optional
 
-    - task: ms.vss-governance-buildtask.governance-build-task-component-detection.ComponentGovernanceComponentDetection@0
-      displayName: 'Component Detection'
-
-    - powershell: 'Get-ChildItem .. -ErrorAction Continue -Recurse -Force | Where {$_.FullName -notlike "*node_modules*"}'
-      displayName: 'Dir workspace except node_modules'
-      continueOnError: true
-      condition: succeededOrFailed()
+      - powershell: 'Get-ChildItem .. -ErrorAction Continue -Recurse -Force | Where {$_.FullName -notlike "*node_modules*"}'
+        displayName: "Dir workspace except node_modules"
+        continueOnError: true
+        condition: succeededOrFailed()
