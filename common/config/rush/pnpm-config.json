@@ -3,6 +3,8 @@
     "globalOverrides": {
         "yarn": "^1.22.22",
         "@oclif/config": "1.15.1",
-        "minimist": "^1.2.6"
+        "minimist": "^1.2.6",
+        "lodash": "^4.17.21",
+        "tar": "^6.1.9"
     }
 }
