@@ -1,0 +1,43 @@
+{
+  "name": "@rush-temp/bf-lg-cli",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@oclif/command": "^1.5.19",
+    "@oclif/config": "^1.14.0",
+    "@oclif/dev-cli": "^1.22.2",
+    "@oclif/errors": "^1.2.2",
+    "@oclif/plugin-help": "^2.2.3",
+    "@oclif/test": "^1.2.5",
+    "@types/chai": "^4.2.9",
+    "@types/fs-extra": "^8.0.1",
+    "@types/lodash": "~4.14.146",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^10.17.15",
+    "@types/node-fetch": "2.5.4",
+    "@types/readline-sync": "^1.4.3",
+    "adaptive-expressions": "4.13.0",
+    "axios": "~0.24.0",
+    "botbuilder-lg": "4.13.0",
+    "chai": "^4.2.0",
+    "delay": "^4.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
+    "fs-extra": "^8.1.0",
+    "globby": "^10.0.2",
+    "https-proxy-agent": "^5.0.0",
+    "lodash": "^4.17.21",
+    "mocha": "^5.2.0",
+    "nyc": "^14.1.1",
+    "read-text-file": "^1.1.0",
+    "readline-sync": "^1.4.10",
+    "rimraf": "^2.6.3",
+    "ts-node": "^9.0.0",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.3"
+  },
+  "rushDependencies": {
+    "@microsoft/bf-cli-command": "1.0.0"
+  }
+}

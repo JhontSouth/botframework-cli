@@ -1,0 +1,8 @@
+{
+  "node": "16.20.2",
+  "packageManager": "pnpm",
+  "packageManagerVersion": "7.33.5",
+  "rushJsonFolder": "D:\\Jhonatan\\Documents\\Dev\\My repos\\botframework-cli",
+  "npmrcHash": "210b51c25035b902dae40639dfa95bf3c289cdd3",
+  "storePath": "D:\\Jhonatan\\Documents\\Dev\\My repos\\botframework-cli\\common\\temp/pnpm-store"
+}
