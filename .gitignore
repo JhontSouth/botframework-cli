@@ -56,9 +56,11 @@ jspm_packages/
 .next
 
 # Common toolchain intermediate files
+temp 
 
 # Rush files
-
+common/temp/**
+.rush/temp/**
 
 .DS_Store
 
