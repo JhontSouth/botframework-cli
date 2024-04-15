@@ -33,8 +33,8 @@ jobs:
           verbose: false
           customCommand: "install --global @microsoft/rush@5.33.0"
 
-      - script: "rush update"
-        displayName: "rush update"
+      - script: "rush update --purge"
+        displayName: "rush update purge"
 
       - script: "rush build -p 2"
         displayName: "rush build -p 2"
