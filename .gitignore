@@ -56,7 +56,7 @@ jspm_packages/
 .next
 
 # Common toolchain intermediate files
-temp 
+temp
 
 # Rush files
 common/temp/**
