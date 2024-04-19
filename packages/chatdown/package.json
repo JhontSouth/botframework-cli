@@ -18,7 +18,7 @@
     "latest-version": "^4.0.0",
     "mime-types": "^2.1.18",
     "minimist": "^1.2.6",
-    "axios": "~0.24.0",
+    "axios": "~1.6.0",
     "https-proxy-agent": "^5.0.0",
     "please-upgrade-node": "^3.0.1",
     "semver": "^5.5.1",
@@ -42,7 +42,7 @@
     "rimraf": "^2.6.3",
     "ts-node": "^9.0.0",
     "tslint": "^5.16.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.9.4"
   },
   "engines": {
     "node": ">=8.0.0"

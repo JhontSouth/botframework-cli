@@ -57,7 +57,7 @@
     "@oclif/errors": "~1.2.2",
     "@oclif/parser": "~3.8.4",
     "delay": "^5.0.0",
-    "axios": "~0.24.0",
+    "axios": "~1.6.0",
     "camelcase": "^4.1.0",
     "chalk": "2.4.1",
     "cli-table3": "^0.5.1",
@@ -95,6 +95,6 @@
     "ts-node": "^9.0.0",
     "tslint": "^5.18.0",
     "rimraf": "^2.6.3",
-    "typescript": "^4.0.3"
+    "typescript": "^4.9.4"
   }
 }

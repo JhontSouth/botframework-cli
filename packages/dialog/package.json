@@ -58,7 +58,7 @@
     "@types/lru-cache": "^5.1.0",
     "@types/xml2js": "^0.4.4",
     "ajv": "^6.12.2",
-    "axios": "~0.24.0",
+    "axios": "~1.6.0",
     "https-proxy-agent": "^5.0.0",
     "chalk": "^2.4.2",
     "clone": "^2.1.2",
@@ -92,6 +92,6 @@
     "rimraf": "^2.6.3",
     "ts-node": "^9.0.0",
     "tslint": "^5.18.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.9.4"
   }
 }
