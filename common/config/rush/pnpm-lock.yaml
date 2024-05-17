@@ -45,6 +45,7 @@ specifiers:
   antlr4: 4.9.2
   applicationinsights: ^1.0.8
   argparse: ~1.0.10
+  axios: 0.28.0
   botbuilder-lg: 4.22.1
   botframework-schema: ^4.22.1
   camelcase: ^4.1.0
@@ -127,6 +128,7 @@ dependencies:
   antlr4: 4.9.2
   applicationinsights: 1.7.3
   argparse: 1.0.10
+  axios: 0.28.0_debug@4.1.1
   botbuilder-lg: 4.22.1
   botframework-schema: 4.22.2
   camelcase: 4.1.0
@@ -1618,18 +1620,12 @@ packages:
     resolution: {integrity: sha512-LEeSAWeh2Gfa2FtlQE1shxQ8zi5F9GHarrGKz08TMdODD5T4eH6BMsvtnhbWZ+XQn+Gb6om/917ucvRu7l7ukw==}
     dev: false
 
-  /axios/0.21.4_debug@4.1.1:
-    resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
+  /axios/0.28.0_debug@4.1.1:
+    resolution: {integrity: sha512-Tu7NYoGY4Yoc7I+Npf9HhUMtEEpV7ZiLH9yndTCoNhcpBH0kwcvFbzYN9/u5QKI5A6uefjsNNWaz5olJVYS62Q==}
     dependencies:
-      follow-redirects: 1.14.9_debug@4.1.1
-    transitivePeerDependencies:
-      - debug
-    dev: false
-
-  /axios/0.24.0_debug@4.1.1:
-    resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
-    dependencies:
-      follow-redirects: 1.14.9_debug@4.1.1
+      follow-redirects: 1.15.6_debug@4.1.1
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -3008,8 +3004,8 @@ packages:
     resolution: {integrity: sha512-a1hQMktqW9Nmqr5aktAux3JMNqaucxGcjtjWnZLHX7yyPCmlSV3M54nGYbqT8K+0GhF3NBgmJCc3ma+WOgX8Jg==}
     dev: false
 
-  /follow-redirects/1.14.9_debug@4.1.1:
-    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
+  /follow-redirects/1.15.6_debug@4.1.1:
+    resolution: {integrity: sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -3039,6 +3035,15 @@ packages:
 
   /form-data/3.0.0:
     resolution: {integrity: sha512-CKMFDglpbMi6PyN+brwB9Q/GOw0eAnsrEZDgcsH5Krhz5Od/haKHAX0NmQfha2zPPz0JpWzA7GJHGSnvCRLWsg==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.26
+    dev: false
+
+  /form-data/4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
     engines: {node: '>= 6'}
     dependencies:
       asynckit: 0.4.0
@@ -4847,6 +4852,10 @@ packages:
     engines: {node: '>= 8'}
     dev: false
 
+  /proxy-from-env/1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: false
+
   /proxyquire/2.1.3:
     resolution: {integrity: sha512-BQWfCqYM+QINd+yawJz23tbBM40VIGXOdDw3X344KcclI/gtBbdWF6SlQ4nK/bYhF9d27KYug9WzljHC6B9Ysg==}
     dependencies:
@@ -5690,6 +5699,21 @@ packages:
       yn: 3.1.1
     dev: false
 
+  /ts-node/9.0.0_typescript@4.9.5:
+    resolution: {integrity: sha512-/TqB4SnererCDR/vb4S/QvSZvzQMJN8daAslg7MeaiHvD8rDZsSfXmNeNumyZZzMned72Xoq/isQljYSt8Ynfg==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    peerDependencies:
+      typescript: '>=2.7'
+    dependencies:
+      arg: 4.1.3
+      diff: 4.0.2
+      make-error: 1.3.6
+      source-map-support: 0.5.19
+      typescript: 4.9.5
+      yn: 3.1.1
+    dev: false
+
   /tslib/1.11.1:
     resolution: {integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==}
     dev: false
@@ -5974,6 +5998,12 @@ packages:
 
   /typescript/4.0.3:
     resolution: {integrity: sha512-tEu6DGxGgRJPb/mVPIZ48e69xCn2yRmCgYmDugAVwmJ6o+0u1RI18eO7E7WBTLYLaEVVOhwQmcdhQHweux/WPg==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: false
+
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: false
@@ -6366,7 +6396,7 @@ packages:
     dev: false
 
   file:projects/bf-chatdown.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-GNMuzUQLjug4Yl1RKORhgHFfTUd2Yz7Zd2O1MkwpNncYnEyjts6lTvjr2xDGKQz9JHAuR+IBE2f6NPgA460TaA==, tarball: file:projects/bf-chatdown.tgz}
+    resolution: {integrity: sha512-uyyLbSZpt1fvgUv2W+n9qIg1nO4k/pbb6nnxDyWI4DL7O05x09sn3eJ639y428bDyCTQ6cj++K0bGzkUZP7TYw==, tarball: file:projects/bf-chatdown.tgz}
     id: file:projects/bf-chatdown.tgz
     name: '@rush-temp/bf-chatdown'
     version: 0.0.0
@@ -6383,7 +6413,7 @@ packages:
       '@types/mocha': 10.0.6
       '@types/node': 10.17.17
       '@types/rimraf': 2.0.3
-      axios: 0.24.0_debug@4.1.1
+      axios: 0.28.0_debug@4.1.1
       botframework-schema: 4.22.2
       chai: 4.4.1
       chalk: 2.4.1
@@ -6516,7 +6546,7 @@ packages:
     dev: false
 
   file:projects/bf-dialog.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-RLJSDglEUMvUOFnvbuj+2RR69KzxV3N8XUycaSuv16NxXBO5EqeV0EXrJtiAzF4jWcmY0AN2CcULJck1iPcBXQ==, tarball: file:projects/bf-dialog.tgz}
+    resolution: {integrity: sha512-qddaCL3j3zb8rM5rHw+BCRsH4dgdji+NXLj26D3IjMaspj834LSIC37khBgiPAIJ6Ewdz8hcz+4BduPDn2CHfQ==, tarball: file:projects/bf-dialog.tgz}
     id: file:projects/bf-dialog.tgz
     name: '@rush-temp/bf-dialog'
     version: 0.0.0
@@ -6539,7 +6569,7 @@ packages:
       '@types/seedrandom': 2.4.28
       '@types/xml2js': 0.4.5
       ajv: 6.12.6
-      axios: 0.24.0_debug@4.1.1
+      axios: 0.28.0_debug@4.1.1
       chai: 4.4.1
       chalk: 2.4.2
       clone: 2.1.2
@@ -6597,7 +6627,7 @@ packages:
     dev: false
 
   file:projects/bf-lg-cli.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-Rh1QPKPzeBI+uU30cdURdw/68UZRQC0P1qFaJpHBh68TyvhNNRfcgrkBYkdAVdwu7jmG7BjFaMtKtwN9g6stRw==, tarball: file:projects/bf-lg-cli.tgz}
+    resolution: {integrity: sha512-mdOmFfOVlyytRqblkuxiJUVwu8ZdYFLXeCXqu1McAPDRmq970Lml4BgtAaGhW3v6BAV48Ry/D7Rp8hksmqwDZw==, tarball: file:projects/bf-lg-cli.tgz}
     id: file:projects/bf-lg-cli.tgz
     name: '@rush-temp/bf-lg-cli'
     version: 0.0.0
@@ -6616,7 +6646,7 @@ packages:
       '@types/node-fetch': 2.5.4
       '@types/readline-sync': 1.4.3
       adaptive-expressions: 4.22.1
-      axios: 0.24.0_debug@4.1.1
+      axios: 0.28.0_debug@4.1.1
       botbuilder-lg: 4.22.1
       chai: 4.4.1
       delay: 4.3.0
@@ -6641,7 +6671,7 @@ packages:
     dev: false
 
   file:projects/bf-lu.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-FXOnK8kAqhK7DEaWW0ad1TxJv7mEn3dzmKsfvBjlmYVvFYMiULl7eaJiZyk2Gp5Zbl++9TnVIe/yIqAFkggivg==, tarball: file:projects/bf-lu.tgz}
+    resolution: {integrity: sha512-mvTZlsZefcbEs1uobrqgPo5X8hvKIGmhtEeqxyg5JValtzcJ+hjAZu1jGW+Iot+9CLDFTdtC808rvAiNrmB9jQ==, tarball: file:projects/bf-lu.tgz}
     id: file:projects/bf-lu.tgz
     name: '@rush-temp/bf-lu'
     version: 0.0.0
@@ -6654,7 +6684,7 @@ packages:
       '@types/node': 10.17.17
       '@types/node-fetch': 2.5.5
       antlr4: 4.9.2
-      axios: 0.24.0_debug@4.1.1
+      axios: 0.28.0_debug@4.1.1
       chai: 4.4.1
       chalk: 2.4.1
       console-stream: 0.1.1
@@ -6682,7 +6712,7 @@ packages:
     dev: false
 
   file:projects/bf-luis-cli.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-K1XqOc9wKyCzfQ4DvkUprojnvjwSBlJ5bUh4A/OebaQc0TEVh/1nicfrRNKwMPSI+QS+nVaRfapTnRIBigaxNg==, tarball: file:projects/bf-luis-cli.tgz}
+    resolution: {integrity: sha512-KYxxbrRyBndRpG9nyJABSmpxxKyyC2hWX4vuMXgrvRlL/GzNounhhsHh4vv5e0JPkgjwOdFjMupcsNjJxsnkJQ==, tarball: file:projects/bf-luis-cli.tgz}
     id: file:projects/bf-luis-cli.tgz
     name: '@rush-temp/bf-luis-cli'
     version: 0.0.0
@@ -6705,7 +6735,7 @@ packages:
       '@types/node-fetch': 2.5.5
       '@types/rimraf': 2.0.3
       '@types/sinon': 7.5.2
-      axios: 0.24.0_debug@4.1.1
+      axios: 0.28.0_debug@4.1.1
       chai: 4.4.1
       cli-ux: 5.3.3
       fs-extra: 8.1.0
@@ -6764,7 +6794,7 @@ packages:
     dev: false
 
   file:projects/bf-orchestrator.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-xX3eahI/WZXiY/1+fgF96JTcko8AgjFH2UvtVoCpJ4+9Rn6wUS6yGpP8Fi9s3xyLMdjJl/z2Qxdght8KpcmS9A==, tarball: file:projects/bf-orchestrator.tgz}
+    resolution: {integrity: sha512-bumQAWaDBg/yHfSIJ4fwto5+txNlQBiUjZnsBssMYWSeLsbZ3LHLo69V/VjbNV6IU/XGDFBtVOskkI3/jLMWqw==, tarball: file:projects/bf-orchestrator.tgz}
     id: file:projects/bf-orchestrator.tgz
     name: '@rush-temp/bf-orchestrator'
     version: 0.0.0
@@ -6775,7 +6805,7 @@ packages:
       '@types/mocha': 10.0.6
       '@types/node': 10.17.17
       '@types/sinon': 9.0.11
-      axios: 0.21.4_debug@4.1.1
+      axios: 0.28.0_debug@4.1.1
       chai: 4.4.1
       eslint: 5.16.0
       fast-text-encoding: 1.0.3
@@ -6787,9 +6817,9 @@ packages:
       read-text-file: 1.1.0
       rimraf: 2.7.1
       sinon: 9.2.4
-      ts-node: 9.0.0_typescript@4.0.3
+      ts-node: 9.0.0_typescript@4.9.5
       tslib: 2.6.2
-      typescript: 4.0.3
+      typescript: 4.9.5
       unzip-stream: 0.3.1
     transitivePeerDependencies:
       - debug
@@ -6798,7 +6828,7 @@ packages:
     dev: false
 
   file:projects/bf-qnamaker.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-ZMHKJwapzPxtzFhPfg1F7465HUMFUZkbJPlWjG5qJt1VS9ODB9JCWSjMh/OpUuU06rSeXGFHF9T1lw256xEg/A==, tarball: file:projects/bf-qnamaker.tgz}
+    resolution: {integrity: sha512-U9IpSgpe9bNGpN1yq/e9B24AKb+NWBBOEU77VTdnNJhkvhORqe+B3+TB1VlI3wu4DHSjRnXIFqmsPAXzqLEXOw==, tarball: file:projects/bf-qnamaker.tgz}
     id: file:projects/bf-qnamaker.tgz
     name: '@rush-temp/bf-qnamaker'
     version: 0.0.0
@@ -6815,7 +6845,7 @@ packages:
       '@types/mocha': 10.0.6
       '@types/nock': 11.1.0
       '@types/node': 10.17.17
-      axios: 0.24.0_debug@4.1.1
+      axios: 0.28.0_debug@4.1.1
       camelcase: 4.1.0
       chai: 4.4.1
       chalk: 2.4.1
