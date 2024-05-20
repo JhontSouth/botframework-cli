@@ -3,7 +3,7 @@
  * Licensed under the MIT License.
  */
 
-import { CLIError, Command, flags } from '@microsoft/bf-cli-command'
+import {CLIError, Command, flags} from '@microsoft/bf-cli-command'
 
 import Application from './../../../api/application'
 
@@ -18,20 +18,20 @@ export default class LuisApplicationCreate extends Command {
   `]
 
   static flags: flags.Input<any> = {
-    help: flags.help({ char: 'h' }),
-    endpoint: flags.string({ description: 'LUIS endpoint hostname' }),
-    subscriptionKey: flags.string({ description: '(required) LUIS cognitive services subscription key (default: config:LUIS:subscriptionKey)' }),
-    name: flags.string({ description: '(required) Name of LUIS application' }),
-    culture: flags.string({ description: 'Specify culture language (default: en-us)' }),
-    description: flags.string({ description: 'Description of LUIS application' }),
-    versionId: flags.string({ description: '(required) LUIS version Id. (defaults to config:LUIS:versionId)' }),
-    tokenizerVersion: flags.string({ description: 'Version specifies how sentences are tokenized (optional). See also: https://aka.ms/luistokens' }),
-    save: flags.boolean({ description: 'Save configuration settings from imported app (appId & endpoint)' }),
-    json: flags.boolean({ description: 'Display output as JSON' }),
+    help: flags.help({char: 'h'}),
+    endpoint: flags.string({description: 'LUIS endpoint hostname'}),
+    subscriptionKey: flags.string({description: '(required) LUIS cognitive services subscription key (default: config:LUIS:subscriptionKey)'}),
+    name: flags.string({description: '(required) Name of LUIS application'}),
+    culture: flags.string({description: 'Specify culture language (default: en-us)'}),
+    description: flags.string({description: 'Description of LUIS application'}),
+    versionId: flags.string({description: '(required) LUIS version Id. (defaults to config:LUIS:versionId)'}),
+    tokenizerVersion: flags.string({description: 'Version specifies how sentences are tokenized (optional). See also: https://aka.ms/luistokens'}),
+    save: flags.boolean({description: 'Save configuration settings from imported app (appId & endpoint)'}),
+    json: flags.boolean({description: 'Display output as JSON'}),
   }
 
   async run() {
-    const { flags } = this.parse(LuisApplicationCreate)
+    const {flags} = this.parse(LuisApplicationCreate)
     const flagLabels = Object.keys(LuisApplicationCreate.flags)
     const configDir = this.config.configDir
 
@@ -50,20 +50,20 @@ export default class LuisApplicationCreate extends Command {
 
     if (!culture) culture = 'en-us'
 
-    const requiredProps = { endpoint, subscriptionKey, name }
+    const requiredProps = {endpoint, subscriptionKey, name}
     utils.validateRequiredProps(requiredProps)
 
-    const applicationCreateObject = { name, culture, description, versionId, usageScenario, tokenizerVersion }
+    const applicationCreateObject = {name, culture, description, versionId, usageScenario, tokenizerVersion}
 
     try {
-      const response = (await Application.create({ subscriptionKey, endpoint }, applicationCreateObject)).data
+      const response = await Application.create({subscriptionKey, endpoint}, applicationCreateObject)
 
-      const output: string = flags.json ? JSON.stringify({ Status: 'App successfully created', id: response }, null, 2) : `App successfully created with id ${response}.`
+      const output: string = flags.json ? JSON.stringify({Status: 'App successfully created', id: response}, null, 2) : `App successfully created with id ${response}.`
       this.log(output)
 
       if (save) {
         const config = {
-          appId: response.body,
+          appId: response?.body,
           endpoint,
           subscriptionKey
         }
