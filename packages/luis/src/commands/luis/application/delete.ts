@@ -3,11 +3,11 @@
  * Licensed under the MIT License.
  */
 
-import {CLIError, Command, flags} from '@microsoft/bf-cli-command'
+import { CLIError, Command, flags } from '@microsoft/bf-cli-command'
 
 import Application from './../../../api/application'
 
-const {cli} = require('cli-ux')
+const { cli } = require('cli-ux')
 const utils = require('../../../utils/index')
 
 export default class LuisApplicationDelete extends Command {
@@ -18,16 +18,16 @@ export default class LuisApplicationDelete extends Command {
   `]
 
   static flags: flags.Input<any> = {
-    help: flags.help({char: 'h'}),
-    appId: flags.string({description: '(required) LUIS application Id (defaults to config:LUIS:appId)'}),
-    endpoint: flags.string({description: 'LUIS endpoint hostname'}),
-    subscriptionKey: flags.string({description: '(required) LUIS cognitive services subscription key (default: config:LUIS:subscriptionKey)'}),
-    force: flags.boolean({description: 'Force delete with no confirmation'}),
-    json: flags.boolean({description: 'Display output as JSON'})
+    help: flags.help({ char: 'h' }),
+    appId: flags.string({ description: '(required) LUIS application Id (defaults to config:LUIS:appId)' }),
+    endpoint: flags.string({ description: 'LUIS endpoint hostname' }),
+    subscriptionKey: flags.string({ description: '(required) LUIS cognitive services subscription key (default: config:LUIS:subscriptionKey)' }),
+    force: flags.boolean({ description: 'Force delete with no confirmation' }),
+    json: flags.boolean({ description: 'Display output as JSON' })
   }
 
   async run() {
-    const {flags} = this.parse(LuisApplicationDelete)
+    const { flags } = this.parse(LuisApplicationDelete)
     const flagLabels = Object.keys(LuisApplicationDelete.flags)
     const configDir = this.config.configDir
 
@@ -37,7 +37,7 @@ export default class LuisApplicationDelete extends Command {
       subscriptionKey,
     } = await utils.processInputs(flags, flagLabels, configDir)
 
-    const requiredProps = {appId, endpoint, subscriptionKey}
+    const requiredProps = { appId, endpoint, subscriptionKey }
     utils.validateRequiredProps(requiredProps)
 
     if (flags.appId && !flags.force) {
@@ -48,9 +48,9 @@ export default class LuisApplicationDelete extends Command {
     }
 
     try {
-      const result = await Application.delete({subscriptionKey, endpoint, appId})
-      if (result.code === 'Success') {
-        const output = flags.json ? JSON.stringify({Status: 'Success', id: flags.appId}, null, 2) : 'App successfully deleted.'
+      const result = await Application.delete({ subscriptionKey, endpoint, appId })
+      if ("code" in result && result.code === 'Success') {
+        const output = flags.json ? JSON.stringify({ Status: 'Success', id: flags.appId }, null, 2) : 'App successfully deleted.'
         this.log(output)
       }
     } catch (err) {

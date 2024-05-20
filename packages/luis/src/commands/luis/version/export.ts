@@ -3,7 +3,7 @@
  * Licensed under the MIT License.
  */
 
-import {CLIError, Command, flags} from '@microsoft/bf-cli-command'
+import { CLIError, Command, flags } from '@microsoft/bf-cli-command'
 
 import Version from './../../../api/version'
 
@@ -17,18 +17,18 @@ export default class LuisVersionExport extends Command {
   `]
 
   static flags: flags.Input<any> = {
-    help: flags.help({char: 'h'}),
-    appId: flags.string({description: '(required) LUIS application Id (defaults to config:LUIS:appId)'}),
-    versionId: flags.string({description: '(required) Version to export (defaults to config:LUIS:versionId)'}),
-    exportLU: flags.boolean({description: 'Export format type as LU'}),
-    out: flags.string({char: 'o', description: 'Save exported application to specified file, uses STDOUT if not specified (optional)'}),
-    force: flags.boolean({char: 'f', description: 'Overwrites output file if exists, otherwise creates a parallel numbered file (optional)', default: false}),
-    endpoint: flags.string({description: 'LUIS endpoint hostname'}),
-    subscriptionKey: flags.string({description: '(required) LUIS cognitive services subscription key (default: config:LUIS:subscriptionKey)'}),
+    help: flags.help({ char: 'h' }),
+    appId: flags.string({ description: '(required) LUIS application Id (defaults to config:LUIS:appId)' }),
+    versionId: flags.string({ description: '(required) Version to export (defaults to config:LUIS:versionId)' }),
+    exportLU: flags.boolean({ description: 'Export format type as LU' }),
+    out: flags.string({ char: 'o', description: 'Save exported application to specified file, uses STDOUT if not specified (optional)' }),
+    force: flags.boolean({ char: 'f', description: 'Overwrites output file if exists, otherwise creates a parallel numbered file (optional)', default: false }),
+    endpoint: flags.string({ description: 'LUIS endpoint hostname' }),
+    subscriptionKey: flags.string({ description: '(required) LUIS cognitive services subscription key (default: config:LUIS:subscriptionKey)' }),
   }
 
   async run() {
-    const {flags} = this.parse(LuisVersionExport)
+    const { flags } = this.parse(LuisVersionExport)
     const flagLabels = Object.keys(LuisVersionExport.flags)
     const configDir = this.config.configDir
 
@@ -41,11 +41,11 @@ export default class LuisVersionExport extends Command {
       subscriptionKey,
     } = await utils.processInputs(flags, flagLabels, configDir)
 
-    const requiredProps = {appId, versionId, endpoint, subscriptionKey}
+    const requiredProps = { appId, versionId, endpoint, subscriptionKey }
     utils.validateRequiredProps(requiredProps)
 
     try {
-      const messageData = await Version.export({subscriptionKey, endpoint, appId}, versionId, flags.exportLU ? 'lu' : 'json')
+      const messageData = (await Version.export({ subscriptionKey, endpoint, appId }, versionId, flags.exportLU ? 'lu' : 'json')).data
 
       if (messageData.error) {
         throw new CLIError(messageData.error.message)

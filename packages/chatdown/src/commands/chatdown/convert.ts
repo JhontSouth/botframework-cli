@@ -3,8 +3,8 @@
  * Licensed under the MIT License.
  */
 
-import {flags} from '@oclif/command'
-import {CLIError, Command, utils} from '@microsoft/bf-cli-command'
+import { flags } from '@oclif/command'
+import { CLIError, Command, utils } from '@microsoft/bf-cli-command'
 const chalk = require('chalk')
 const chatdown = require('../../../utils/index')
 const fs = require('fs-extra')
@@ -22,17 +22,17 @@ export default class ChatdownConvert extends Command {
   $ (echo user=Joe && [ConversationUpdate=MembersAdded=Joe]) | bf chatdown --static`]
 
   static flags: flags.Input<any> = {
-    in: flags.string({char: 'i', description: 'The path of the chat file or directory to be parsed. A glob expression may be passed containing chat files to be processed all at once, ex. ./**/*.chat. If flag is omitted, stdin will be used. If an output directory is not present (-o), it will default the output to the current working directory.'}),
-    out: flags.string({char: 'o', description: 'Path to the directory where the output of the multiple chat file processing (-o) will be placed.'}),
-    stamp: flags.boolean({char: 's', description: 'Use static timestamps when generating timestamps on activities.'}),
-    prefix: flags.boolean({char: 'p', description: 'Prefix stdout with package name.'}),
-    force: flags.boolean({char: 'f', description: 'If --out flag is provided with the path to an existing file, overwrites that file', default: false}),
-    help: flags.help({char: 'h', description: 'Chatdown command help'})
+    in: flags.string({ char: 'i', description: 'The path of the chat file or directory to be parsed. A glob expression may be passed containing chat files to be processed all at once, ex. ./**/*.chat. If flag is omitted, stdin will be used. If an output directory is not present (-o), it will default the output to the current working directory.' }),
+    out: flags.string({ char: 'o', description: 'Path to the directory where the output of the multiple chat file processing (-o) will be placed.' }),
+    stamp: flags.boolean({ char: 's', description: 'Use static timestamps when generating timestamps on activities.' }),
+    prefix: flags.boolean({ char: 'p', description: 'Prefix stdout with package name.' }),
+    force: flags.boolean({ char: 'f', description: 'If --out flag is provided with the path to an existing file, overwrites that file', default: false }),
+    help: flags.help({ char: 'h', description: 'Chatdown command help' })
   }
 
   async run() {
     try {
-      const {flags} = this.parse(ChatdownConvert)
+      const { flags } = this.parse(ChatdownConvert)
 
       let inputIsDirectory = flags.in ? (flags.in.includes('*') || this.isDir(flags.in)) : false
 
@@ -89,7 +89,7 @@ export default class ChatdownConvert extends Command {
       return utils.readTextFile(args)
     } else {
       //Check if piped data was sent
-      const {stdin} = process
+      const { stdin } = process
       if (stdin.isTTY) {
         return false
       } else {
@@ -120,7 +120,7 @@ export default class ChatdownConvert extends Command {
     return new Promise(async (resolve, reject) => {
       let files: any = []
       if (inputDir.indexOf('*') > -1) {
-        files = glob.sync(inputDir, {ignore: ['**/node_modules/**']})
+        files = glob.sync(inputDir, { ignore: ['**/node_modules/**'] })
       } else {
         try {
           files = await this.getFiles(inputDir)
@@ -152,11 +152,11 @@ export default class ChatdownConvert extends Command {
       let writeFile = path.join(outputDir, `${fileName}.transcript`)
       let validatedPath = utils.validatePath(writeFile, '', force)
       await fs.ensureFile(writeFile)
-      await fs.writeJson(validatedPath, activities, {spaces: 2})
+      await fs.writeJson(validatedPath, activities, { spaces: 2 })
       return validatedPath
     }
     const output = JSON.stringify(activities, null, 2)
-    await new Promise(done => process.stdout.write(output, 'utf-8', () => done()))
+    await new Promise<void>(done => process.stdout.write(output, 'utf-8', () => done()))
     return true
   }
 }

@@ -3,7 +3,7 @@
  * Licensed under the MIT License.
  */
 
-import {CLIError, Command, flags} from '@microsoft/bf-cli-command'
+import { CLIError, Command, flags } from '@microsoft/bf-cli-command'
 
 import Application from './../../../api/application'
 
@@ -19,24 +19,24 @@ export default class LuisApplicationImport extends Command {
   `]
 
   static flags: flags.Input<any> = {
-    help: flags.help({char: 'h'}),
-    endpoint: flags.string({description: '(required) LUIS endpoint hostname'}),
-    subscriptionKey: flags.string({description: '(required) LUIS cognitive services subscription key (default: config subscriptionKey)'}),
-    name: flags.string({description: 'LUIS application name (optional)'}),
-    in: flags.string({char: 'i', description: '(required) File path containing LUIS application contents, uses STDIN if not specified'}),
-    save: flags.boolean({description: 'Save configuration settings from imported app (appId, subscriptionKey & endpoint)'}),
-    json: flags.boolean({description: 'Display output as JSON'})
+    help: flags.help({ char: 'h' }),
+    endpoint: flags.string({ description: '(required) LUIS endpoint hostname' }),
+    subscriptionKey: flags.string({ description: '(required) LUIS cognitive services subscription key (default: config subscriptionKey)' }),
+    name: flags.string({ description: 'LUIS application name (optional)' }),
+    in: flags.string({ char: 'i', description: '(required) File path containing LUIS application contents, uses STDIN if not specified' }),
+    save: flags.boolean({ description: 'Save configuration settings from imported app (appId, subscriptionKey & endpoint)' }),
+    json: flags.boolean({ description: 'Display output as JSON' })
   }
 
   async run() {
-    const {flags} = this.parse(LuisApplicationImport)
+    const { flags } = this.parse(LuisApplicationImport)
     const flagLabels = Object.keys(LuisApplicationImport.flags)
     const configDir = this.config.configDir
     const stdin = await this.readStdin()
 
-    let {endpoint, subscriptionKey, name, inVal} = await utils.processInputs(flags, flagLabels, configDir)
+    let { endpoint, subscriptionKey, name, inVal } = await utils.processInputs(flags, flagLabels, configDir)
 
-    const requiredProps = {endpoint, subscriptionKey}
+    const requiredProps = { endpoint, subscriptionKey }
     utils.validateRequiredProps(requiredProps)
 
     inVal = inVal ? inVal.trim() : flags.in
@@ -46,14 +46,14 @@ export default class LuisApplicationImport extends Command {
 
     try {
       appJSON = await this.formatInput(appJSON, name)
-      let messageData = await Application.import({subscriptionKey, endpoint}, JSON.parse(appJSON), name)
+      let messageData = (await Application.import({ subscriptionKey, endpoint }, JSON.parse(appJSON), name)).data
 
       if (messageData.error) {
         throw new CLIError(messageData.error.message)
       }
 
       messageData = JSON.stringify(messageData)
-      const output: string = flags.json ? JSON.stringify({Status: 'Success', id: messageData}, null, 2) : `App successfully imported with id ${messageData}.`
+      const output: string = flags.json ? JSON.stringify({ Status: 'Success', id: messageData }, null, 2) : `App successfully imported with id ${messageData}.`
       this.log(output)
 
       if (flags.save) {

@@ -3,7 +3,7 @@
  * Licensed under the MIT License.
  */
 
-import {CLIError, Command, flags} from '@microsoft/bf-cli-command'
+import { CLIError, Command, flags } from '@microsoft/bf-cli-command'
 
 import Application from './../../../api/application'
 
@@ -17,17 +17,17 @@ export default class LuisApplicationRename extends Command {
   `]
 
   static flags: flags.Input<any> = {
-    help: flags.help({char: 'h'}),
-    endpoint: flags.string({description: 'LUIS endpoint hostname'}),
-    subscriptionKey: flags.string({description: '(required) LUIS cognitive services subscription key (default: config:LUIS:subscriptionKey)'}),
-    appId: flags.string({description: '(required) LUIS application Id (defaults to config:LUIS:appId)'}),
-    name: flags.string({description: '(required) Name of LUIS application', required: true}),
-    description: flags.string({description: 'Description of LUIS application'}),
-    json: flags.boolean({description: 'Display output as JSON'}),
+    help: flags.help({ char: 'h' }),
+    endpoint: flags.string({ description: 'LUIS endpoint hostname' }),
+    subscriptionKey: flags.string({ description: '(required) LUIS cognitive services subscription key (default: config:LUIS:subscriptionKey)' }),
+    appId: flags.string({ description: '(required) LUIS application Id (defaults to config:LUIS:appId)' }),
+    name: flags.string({ description: '(required) Name of LUIS application', required: true }),
+    description: flags.string({ description: 'Description of LUIS application' }),
+    json: flags.boolean({ description: 'Display output as JSON' }),
   }
 
   async run() {
-    const {flags} = this.parse(LuisApplicationRename)
+    const { flags } = this.parse(LuisApplicationRename)
     const flagLabels = Object.keys(LuisApplicationRename.flags)
     const configDir = this.config.configDir
 
@@ -39,14 +39,14 @@ export default class LuisApplicationRename extends Command {
       description
     } = await utils.processInputs(flags, flagLabels, configDir)
 
-    const requiredProps = {endpoint, subscriptionKey, appId}
+    const requiredProps = { endpoint, subscriptionKey, appId }
     utils.validateRequiredProps(requiredProps)
 
     try {
-      const appUpdateStatus = await Application.rename({subscriptionKey, endpoint, appId}, name, description)
+      const appUpdateStatus = await Application.rename({ subscriptionKey, endpoint, appId }, name, description)
 
-      if (appUpdateStatus.code === 'Success') {
-        const output = flags.json ? JSON.stringify({Status: 'Success'}, null, 2) : 'App successfully renamed'
+      if ("code" in appUpdateStatus && appUpdateStatus.code === 'Success') {
+        const output = flags.json ? JSON.stringify({ Status: 'Success' }, null, 2) : 'App successfully renamed'
         this.log(output)
       }
 
