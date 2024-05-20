@@ -12,7 +12,9 @@
     "traceResolution": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "useUnknownInCatchVariables": false,
+    "skipLibCheck": false
 },
   "include": [
     "src/**/*.ts",

@@ -18,7 +18,7 @@
   "bugs": "https://github.com/microsoft/botframework-cli/issues",
   "dependencies": {
     "@microsoft/bf-cli-command": "1.0.0",
-    "@oclif/command": "^1.5.19",
+    "@oclif/command": "^1.8.36",
     "@oclif/config": "^1.14.0",
     "@oclif/errors": "~1.2.2",
     "@oclif/plugin-help": "^2",
@@ -37,7 +37,7 @@
     "@types/node": "^10.17.15",
     "@types/sinon": "^9.0.4",
     "chai": "^4.4.1",
-    "eslint": "^5.16.0",
+    "eslint": "^7.32.0",
     "eslint-config-oclif": "^3.1.0",
     "eslint-config-oclif-typescript": "^0.1.0",
     "globby": "^11.0.4",
@@ -45,7 +45,7 @@
     "mocha": "^10.4.0",
     "rimraf": "^3.0.2",
     "ts-node": "^8.6.2",
-    "typescript": "^4.1.0",
+    "typescript": "^4.4.4",
     "sinon": "^9.0.2"
   },
   "files": [
