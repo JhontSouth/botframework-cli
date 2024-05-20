@@ -6375,7 +6375,7 @@ packages:
     dev: false
 
   file:projects/bf-chatdown.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-uyyLbSZpt1fvgUv2W+n9qIg1nO4k/pbb6nnxDyWI4DL7O05x09sn3eJ639y428bDyCTQ6cj++K0bGzkUZP7TYw==, tarball: file:projects/bf-chatdown.tgz}
+    resolution: {integrity: sha512-Unu2QJ+DdyQ/Z0iwRRcaqZMW/rWhss3mJLqCKwUkX/zzxuUuSz+hFFh7n5tvXJTqAtFXmvV+Ip76UbUsJcZH5g==, tarball: file:projects/bf-chatdown.tgz}
     id: file:projects/bf-chatdown.tgz
     name: '@rush-temp/bf-chatdown'
     version: 0.0.0
@@ -6421,7 +6421,7 @@ packages:
     dev: false
 
   file:projects/bf-cli-command.tgz:
-    resolution: {integrity: sha512-Y7SZxIWGq+v2StXk4njIbFuh+mmGcfSTzQWxBRjSdtvT/7EaOu40aobba7PYNGCRT3aie/KS78t+oSuwjsOY7g==, tarball: file:projects/bf-cli-command.tgz}
+    resolution: {integrity: sha512-x0ikX++IRTJu+pw4P/N9um7hAzPXiaKHoR9JyJc1YzoErB3nCJl8zzWg+vzM3ktLrHMeiWCWQdCrmGO8H6ZiPQ==, tarball: file:projects/bf-cli-command.tgz}
     name: '@rush-temp/bf-cli-command'
     version: 0.0.0
     dependencies:
@@ -6464,7 +6464,7 @@ packages:
     dev: false
 
   file:projects/bf-cli-config.tgz:
-    resolution: {integrity: sha512-pcQfnQETUR+6J6miS0nyJ2yUuHKsmNOIo7R47j4ATo7HEWCRbfNDdRQbjnVptSgKVFSDfUSfA188hMpRfEc8kQ==, tarball: file:projects/bf-cli-config.tgz}
+    resolution: {integrity: sha512-QxAq4Aens4809i08f4srZedagCrz70WIlDKCsoiy7cUeTRDbRo1G3gPYC5R/RAmA3+sr1Gry4PX0VLa9Iaahrg==, tarball: file:projects/bf-cli-config.tgz}
     name: '@rush-temp/bf-cli-config'
     version: 0.0.0
     dependencies:
@@ -6494,7 +6494,7 @@ packages:
     dev: false
 
   file:projects/bf-cli-plugins.tgz:
-    resolution: {integrity: sha512-DfALjnZSwKADif3gMbfQzGcTJrfUHEz9nPGXKHLxKWpOXzgX+m64V+ws22ymCLAW5xVeaEiCplRlYV84Xe6wJg==, tarball: file:projects/bf-cli-plugins.tgz}
+    resolution: {integrity: sha512-D8D7AnbcUvvD8jOf2Cyle9MS0r3nd5alOr2YJtgSupwTIRW6xkXy+aDmtXhbPO89XbgUQtDNmZRi9vbSwj4WfQ==, tarball: file:projects/bf-cli-plugins.tgz}
     name: '@rush-temp/bf-cli-plugins'
     version: 0.0.0
     dependencies:
@@ -6525,7 +6525,7 @@ packages:
     dev: false
 
   file:projects/bf-dialog.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-qddaCL3j3zb8rM5rHw+BCRsH4dgdji+NXLj26D3IjMaspj834LSIC37khBgiPAIJ6Ewdz8hcz+4BduPDn2CHfQ==, tarball: file:projects/bf-dialog.tgz}
+    resolution: {integrity: sha512-iHCseBN3C2gzXzWvEXoB7df1g+qqmnPqSLXwEBZrHK9A1DIO0hxJKapOafycUWtS9HPtP1mdUSa36l9U/nc2BQ==, tarball: file:projects/bf-dialog.tgz}
     id: file:projects/bf-dialog.tgz
     name: '@rush-temp/bf-dialog'
     version: 0.0.0
@@ -6650,7 +6650,7 @@ packages:
     dev: false
 
   file:projects/bf-lu.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-mvTZlsZefcbEs1uobrqgPo5X8hvKIGmhtEeqxyg5JValtzcJ+hjAZu1jGW+Iot+9CLDFTdtC808rvAiNrmB9jQ==, tarball: file:projects/bf-lu.tgz}
+    resolution: {integrity: sha512-9RxpdwOIBYR0kQgEpUhSqmQPzNQauilhGkjHRvHdYM0QQUCMlOHZ5pgf6cbwPej0JBdDq4BlQDWlaMhyuuVdSQ==, tarball: file:projects/bf-lu.tgz}
     id: file:projects/bf-lu.tgz
     name: '@rush-temp/bf-lu'
     version: 0.0.0
@@ -6739,7 +6739,7 @@ packages:
     dev: false
 
   file:projects/bf-orchestrator-cli.tgz:
-    resolution: {integrity: sha512-wMBEJakT2BsgIXQWY5RwxRSX7nmOMFqFoB3Jm8qQgDkh5ASh0K3usRkKEjHvPprnsiLaz1jg+WcivBPN85GaZw==, tarball: file:projects/bf-orchestrator-cli.tgz}
+    resolution: {integrity: sha512-7TQQRZxhfDMrOM6q7Dj1kL0/TqNvAN7Qi7jJsriXzk+tJK4RhuQetQZME8pRtg2kAgVGtHt7Fn54yQNrA/VHRQ==, tarball: file:projects/bf-orchestrator-cli.tgz}
     name: '@rush-temp/bf-orchestrator-cli'
     version: 0.0.0
     dependencies:
@@ -6807,7 +6807,7 @@ packages:
     dev: false
 
   file:projects/bf-qnamaker.tgz_debug@4.1.1:
-    resolution: {integrity: sha512-U9IpSgpe9bNGpN1yq/e9B24AKb+NWBBOEU77VTdnNJhkvhORqe+B3+TB1VlI3wu4DHSjRnXIFqmsPAXzqLEXOw==, tarball: file:projects/bf-qnamaker.tgz}
+    resolution: {integrity: sha512-M/2DF8syJUxgx5vV4ML5UnDPD4wiy2+vjEvlfiQwGM6sIihfLr04EcDjftBZ7F2sO8pVLSg14wJ7ePSeXp/jPQ==, tarball: file:projects/bf-qnamaker.tgz}
     id: file:projects/bf-qnamaker.tgz
     name: '@rush-temp/bf-qnamaker'
     version: 0.0.0
@@ -6860,7 +6860,7 @@ packages:
     dev: false
 
   file:projects/botframework-cli.tgz:
-    resolution: {integrity: sha512-Y5gyRRotUVRtzAkKTSj7rp6nKhT14qLmiJUvyBHo0GBc1+wnzPtXt7H3r5kJYp3Z4DK+0fJKmfEuPDfj8NUKIQ==, tarball: file:projects/botframework-cli.tgz}
+    resolution: {integrity: sha512-q8BvQ0JDRI9KAoW4NEqUkv7i4JtGI1d76x7sUokV29qSPqwEaVpKl2Nr+OV0AaxRT3ccquD1olVEA/hFqww54A==, tarball: file:projects/botframework-cli.tgz}
     name: '@rush-temp/botframework-cli'
     version: 0.0.0
     dependencies:
