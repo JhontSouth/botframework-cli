@@ -5,11 +5,11 @@
 
 import * as fs from 'fs-extra';
 import * as path from 'path';
-import {Utility} from './utility';
-import {httpsProxy} from './utility';
+import { Utility } from './utility';
+import { httpsProxy } from './utility';
 const unzip: any = require('unzip-stream');
-import axios, {AxiosResponse} from 'axios';
-import {Stream} from 'stream';
+import axios, { AxiosResponse } from 'axios';
+import { Stream } from 'stream';
 axios.interceptors.request.use(httpsProxy);
 
 export class OrchestratorBaseModel {
@@ -56,7 +56,7 @@ export class OrchestratorBaseModel {
     onFinish: any = OrchestratorBaseModel.defaultHandler): Promise<void> {
     Utility.debuggingLog('OrchestratorBaseModel.getModelAsync(): entering');
     try {
-      fs.mkdirSync(baseModelPath, {recursive: true});
+      fs.mkdirSync(baseModelPath, { recursive: true });
       Utility.debuggingLog(`OrchestratorBaseModel.getModelAsync(): finished calling  modelUrl=${modelUrl}`);
       const fileName: string = modelUrl.substring(modelUrl.lastIndexOf('/') + 1);
       const modelZipPath: string = path.join(baseModelPath, fileName);
@@ -72,19 +72,19 @@ export class OrchestratorBaseModel {
         await new Promise((resolve: any) => {
           fs.createReadStream(modelZipPath).pipe(
             // eslint-disable-next-line new-cap
-            unzip.Extract({path: baseModelPath})).on(
-            'close', async () => {
-              Utility.debuggingLog(`OrchestratorBaseModel.getModelAsync(): on('close') entering : ${modelZipPath}`);
-              if (onFinish) {
-                Utility.debuggingLog(`OrchestratorBaseModel.getModelAsync(): on('close') entering onFinish() : ${modelZipPath}`);
-                await onFinish('OrchestratorBaseModel.getModelAsync(): on(\'close\') calling onFinish()');
-              }
-              Utility.debuggingLog(`OrchestratorBaseModel.getModelAsync(): on('close') extracting zip file from ${modelZipPath} to ${baseModelPath}`);
-              fs.unlinkSync(modelZipPath);
-              Utility.debuggingLog(`OrchestratorBaseModel.getModelAsync(): on('close') cleaned up the zip file: ${modelZipPath}`);
-              Utility.debuggingLog('OrchestratorBaseModel.getModelAsync(): on(\'close\') finished');
-              resolve();
-            });
+            unzip.Extract({ path: baseModelPath })).on(
+              'close', async () => {
+                Utility.debuggingLog(`OrchestratorBaseModel.getModelAsync(): on('close') entering : ${modelZipPath}`);
+                if (onFinish) {
+                  Utility.debuggingLog(`OrchestratorBaseModel.getModelAsync(): on('close') entering onFinish() : ${modelZipPath}`);
+                  await onFinish('OrchestratorBaseModel.getModelAsync(): on(\'close\') calling onFinish()');
+                }
+                Utility.debuggingLog(`OrchestratorBaseModel.getModelAsync(): on('close') extracting zip file from ${modelZipPath} to ${baseModelPath}`);
+                fs.unlinkSync(modelZipPath);
+                Utility.debuggingLog(`OrchestratorBaseModel.getModelAsync(): on('close') cleaned up the zip file: ${modelZipPath}`);
+                Utility.debuggingLog('OrchestratorBaseModel.getModelAsync(): on(\'close\') finished');
+                resolve();
+              });
         });
         Utility.debuggingLog('OrchestratorBaseModel.getModelAsync(): leaving');
       } catch (error) {
@@ -106,7 +106,8 @@ export class OrchestratorBaseModel {
       url: modelUrl,
       responseType: 'stream',
     });
-    const totalLength: number = response.headers['content-length'];
+    const contentLength = response.headers['content-length'];
+    const totalLength: number = parseInt(contentLength ?? '0', 10);
     onProgress(`Total to download: ${totalLength} bytes...`);
     let totalCompleted: number = 0;
     let totalCompletedPct: number = 0;
@@ -171,13 +172,13 @@ export class OrchestratorBaseModel {
     const models: any = nlrVersions.models;
     for (const modelVersion in models) {
       if (OrchestratorBaseModel.isEntityModelVersion(modelType, modelVersion) && modelVersion.indexOf(lang) > 0) {
-        defaultVersion =  modelVersion;
+        defaultVersion = modelVersion;
         break;
       } else if (OrchestratorBaseModel.isIntentModelVersion(modelType, modelVersion) && modelVersion.indexOf(lang) > 0) {
         defaultVersion = modelVersion;
         break;
       } else if (OrchestratorBaseModel.isEntityModelVersion(modelType, modelVersion) ||
-          OrchestratorBaseModel.isIntentModelVersion(modelType, modelVersion)) {
+        OrchestratorBaseModel.isIntentModelVersion(modelType, modelVersion)) {
         defaultVersion = modelVersion;
       }
     }
