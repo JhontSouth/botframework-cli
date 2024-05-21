@@ -106,7 +106,8 @@ export class OrchestratorBaseModel {
       url: modelUrl,
       responseType: 'stream',
     });
-    const totalLength: number = response.headers['content-length'];
+    const contentLength: string | undefined = response.headers['content-length'];
+    const totalLength: number = parseInt(contentLength ?? '0', 10);
     onProgress(`Total to download: ${totalLength} bytes...`);
     let totalCompleted: number = 0;
     let totalCompletedPct: number = 0;
@@ -171,13 +172,13 @@ export class OrchestratorBaseModel {
     const models: any = nlrVersions.models;
     for (const modelVersion in models) {
       if (OrchestratorBaseModel.isEntityModelVersion(modelType, modelVersion) && modelVersion.indexOf(lang) > 0) {
-        defaultVersion =  modelVersion;
+        defaultVersion = modelVersion;
         break;
       } else if (OrchestratorBaseModel.isIntentModelVersion(modelType, modelVersion) && modelVersion.indexOf(lang) > 0) {
         defaultVersion = modelVersion;
         break;
       } else if (OrchestratorBaseModel.isEntityModelVersion(modelType, modelVersion) ||
-          OrchestratorBaseModel.isIntentModelVersion(modelType, modelVersion)) {
+        OrchestratorBaseModel.isIntentModelVersion(modelType, modelVersion)) {
         defaultVersion = modelVersion;
       }
     }

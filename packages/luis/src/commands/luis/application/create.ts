@@ -63,7 +63,7 @@ export default class LuisApplicationCreate extends Command {
 
       if (save) {
         const config = {
-          appId: response.body,
+          appId: response?.body,
           endpoint,
           subscriptionKey
         }

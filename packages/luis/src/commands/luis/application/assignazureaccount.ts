@@ -48,7 +48,7 @@ export default class LuisApplicationAssignazureaccount extends Command {
         flags.accountName
       )
 
-      if (messageData.error) {
+      if (messageData?.error) {
         throw new CLIError(messageData.error.message)
       }
 

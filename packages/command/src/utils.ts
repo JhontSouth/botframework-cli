@@ -5,7 +5,7 @@
 
 const fs = require('fs-extra')
 const path = require('path')
-import {CLIError} from './clierror'
+import { CLIError } from './clierror'
 
 async function readTextFile(file: any): Promise<string> {
   return new Promise(async (resolve, reject) => {
@@ -40,7 +40,7 @@ async function readTextFile(file: any): Promise<string> {
         }
       }
       return resolve(fileBuffer.toString('utf8').replace(/\0/g, ''))
-    } catch (err) {
+    } catch (err: any) {
       if (err.message.match(/ENOENT: no such file or directory/)) {
         return reject(new CLIError(err.message))
       }
