@@ -21,12 +21,6 @@ jobs:
       _version: ${{coalesce(variables.version, variables.buildVersion)}}
 
     steps:
-    - task: colinsalmcorner.colinsalmcorner-buildtasks.tag-build-task.tagBuildOrRelease@0
-      displayName: 'Tag Build with version number'
-      inputs:
-        tags: 'Version=$(_version)'
-      continueOnError: true
-
     - task: NodeTool@0
       displayName: 'Use Node 16.x'
       inputs:
@@ -60,12 +54,6 @@ jobs:
         else { $Url = "https://codecov.io/github/microsoft/botframework-cli/commit/$(Build.SourceVersion)" };
         Write-Host "##vso[task.setvariable variable=CodecovUrl;]$Url"
       displayName: 'Set CodecovUrl'
-
-    - task: colinsalmcorner.colinsalmcorner-buildtasks.tag-build-task.tagBuildOrRelease@0
-      displayName: 'Tag Build with coverage url'
-      inputs:
-        tags: '$(CodecovUrl)'
-      continueOnError: true
   
     - task: PublishCodeCoverageResults@1
       displayName: 'Populate Code Coverage tab'
