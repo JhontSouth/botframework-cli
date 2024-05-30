@@ -13,7 +13,6 @@ const QnAMakerBuilder = require('@microsoft/bf-lu/lib/parser/qna/qnamaker/kbColl
 const file = require('@microsoft/bf-lu/lib/utils/filehelper')
 const fileExtEnum = require('@microsoft/bf-lu/lib/parser/utils/helpers').FileExtTypeEnum
 
-
 export default class QnamakerConvert extends Command {
   static description = 'Converts .qna file(s) to QnA application JSON models or vice versa.'
 
@@ -44,14 +43,14 @@ export default class QnamakerConvert extends Command {
       let result: any
       if (isQnA) {
         const luFiles = await file.getLuObjects(stdin, flags.in, flags.recurse, fileExtEnum.QnAFile)
-        result = await QnAMakerBuilder.build([...luFiles], false, flags.luis_culture) 
+        result = await QnAMakerBuilder.build([...luFiles], false, flags.luis_culture)
       } else {
         const qnaContent = flags.in ? await file.getContentFromFile(flags.in) : stdin
-        let QnA 
+        let QnA
         let sortFucntion
 
-        if(flags.alterations) {
-          QnA = new Alterations(file.parseJSON(qnaContent, 'QnA Alterations')) 
+        if (flags.alterations) {
+          QnA = new Alterations(file.parseJSON(qnaContent, 'QnA Alterations'))
           sortFucntion = sortAlterations
         } else {
           QnA = new KB(file.parseJSON(qnaContent, 'QnA'))
@@ -61,7 +60,7 @@ export default class QnamakerConvert extends Command {
         if (flags.sort) {
           sortFucntion(QnA)
         }
-        
+
         result = QnA.parseToLuContent()
       }
 

@@ -101,7 +101,7 @@ export default class QnamakerBuild extends Command {
       })
 
       let qnaContents: any[] = []
-      
+
       if ((inVal && inVal !== '') || files.length > 0) {
         if (log) this.log('Loading files...\n')
 
@@ -118,7 +118,7 @@ export default class QnamakerBuild extends Command {
         // load existing recognizers, multiRecogniers and settings or create default ones
         qnaContents = await builder.loadContents(files, {
           culture: defaultCulture,
-          log: log
+          log
         })
       } else {
         // load qna content from stdin and create default recognizer, multiRecognier and settings
@@ -138,8 +138,8 @@ export default class QnamakerBuild extends Command {
       // get endpointKeys
       const endpointKeysInfo = await builder.getEndpointKeys(subscriptionKey, endpoint)
       const endpointKeys: any = {
-        "primaryEndpointKey": endpointKeysInfo.primaryEndpointKey,
-        "secondaryEndpointKey": endpointKeysInfo.secondaryEndpointKey
+        primaryEndpointKey: endpointKeysInfo.primaryEndpointKey,
+        secondaryEndpointKey: endpointKeysInfo.secondaryEndpointKey
       }
 
       // write dialog assets based on config
@@ -169,8 +169,8 @@ export default class QnamakerBuild extends Command {
           out: outputFolder
         })
 
-        if (writeDone) {    
-          this.log(`Successfully wrote settings file to ${outputFolder}\n`)      
+        if (writeDone) {
+          this.log(`Successfully wrote settings file to ${outputFolder}\n`)
           this.log('QnA knowledge base endpointKeys:')
           this.log(endpointKeys)
         } else {

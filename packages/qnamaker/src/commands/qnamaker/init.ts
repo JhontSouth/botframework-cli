@@ -71,7 +71,7 @@ export default class QnamakerInit extends Command {
     try {
       let response = await new Endpointkeys().getEndpointKeys(config)
       config.endpointKey = response.data.primaryEndpointKey
-  
+
       response = await new Knowledgebase().getKnowledgebaseDetails(config)
       let kb = response.data
       config.hostname = kb.hostName

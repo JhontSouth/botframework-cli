@@ -14,7 +14,6 @@ const luTranslator = require('@microsoft/bf-lu/lib/parser/translator/lutranslate
 const translate = require('@microsoft/bf-lu').translate.translationSettings
 const fileHelper = require('@microsoft/bf-lu/lib/utils/filehelper')
 
-
 export default class QnamakerTranslate extends Command {
   static description = 'Translate given QnA maker application JSON model or qna file(s)'
 

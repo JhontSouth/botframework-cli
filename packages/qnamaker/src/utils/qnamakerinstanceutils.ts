@@ -20,16 +20,16 @@ export function sortAlterations(alterationsInstance: any) {
 const sortComparers = {
   compareAltName : (a: any, b: any) => {
     return compareString(a.alterations[0].toUpperCase(), b.alterations[0].toUpperCase())
-  },    
+  },
   compareFn : (a: any, b: any) => {
     return compareString(a.toUpperCase(), b.toUpperCase())
-  },    
+  },
   compareQn : (a: any, b: any) => {
     return compareString(a.questions[0].toUpperCase(), b.questions[0].toUpperCase())
   },
 }
 
-function compareString (a: string, b: string) {
+function compareString(a: string, b: string) {
   if (a < b) {
     return -1
   }

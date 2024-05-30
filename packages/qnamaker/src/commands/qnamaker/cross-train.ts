@@ -26,13 +26,13 @@ export default class QnamakerCrossTrain extends Command {
   async run() {
     try {
       const {flags} = this.parse(QnamakerCrossTrain)
-      
+
       if (!flags.in) {
         throw new CLIError('Missing input. Please specify a folder with --in flag')
       }
-      
+
       flags.in = path.resolve(flags.in)
-      
+
       if (flags.config && flags.config !== '') {
         flags.config = path.resolve(flags.config)
       } else {
